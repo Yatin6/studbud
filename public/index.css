@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#top_Bar {
+    height: 50px;
+    background-color: #8860D0;
+    margin-bottom: 100px;
+}
+
+.fixed_Width {
+    width: 800px;
+    margin: 0 auto;
+}
+#logo {
+    margin:7.5px 0;
+    height: 35px;
+    float: left;
+}
+
+#brand {
+    float: left;
+    margin:9px 10px;
+}
+
+.brand_Name {
+    display: block;
+    color: white;
+    font-size: 12px;
+}
+
+#menu {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+#menu ul {
+    list-style: none;
+}
+
+#menu ul li {
+    display: inline;
+    line-height: 50px;
+}
+
+#menu ul li:first-child {
+    padding-right: 60px;
+}
+
+#menu ul li a {
+    color: white;
+    font-size: 12px;
+}
+.aa{
+    width:40px;
+    height: 50px;
+    background-color:#612cc1;
+    display: none;
+    float: left;
+    position:relative;
+    top: 0px;
+    left:38px;
+}
+#menu ul li a:hover{
+    background-color: white;
+    color:#8860D0;
+}
+#index_Left {
+    float: left;
+    margin-top: 30px;
+}
+
+.title {
+    color: #5680E9;
+    font-weight: 500;
+}
+
+#index_Left button {
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 80px 0;
+    background-color: #5680E9;
+    color: white;
+    border: 0px;
+    transition: background-color 0.3s;
+}
+#index_Left button:hover{
+    cursor:pointer;
+    background-color: hsl(223, 77%, 53%);
+}
+
+.bolder {
+    font-weight: 600;
+}
+
+#illustration {
+    width: 60%;
+    float: right;
+}
+
+.bottom {
+    position:absolute;
+    top:500px;
+    
+}
+
+.bottom p {
+    color: #8860D0;
+    font-size: 13px;
+    display: inline;
+   
+}
+.bottom p:nth-child(1){
+    margin-right: 80px;
+}
+.bottom p:nth-last-child(-n+2){
+    margin:0px 80px;
+}
