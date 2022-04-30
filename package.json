@@ -1,8 +1,27 @@
 {
-  "dependencies": {
-    "express": "^4.17.3"
-  },
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yatin6/studbud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yatin6/studbud/issues"
+  },
+  "homepage": "https://github.com/Yatin6/studbud#readme",
+  "devDependencies": {
+    "parcel": "^2.4.1"
+  },
+  "dependencies": {
+    "sass": "^1.50.0"
   }
 }
