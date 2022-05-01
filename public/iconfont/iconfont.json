@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2076214",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e87a",
+      "unicode_decimal": 59514
+    },
+    {
+      "icon_id": "6129085",
+      "name": "49最后一页、末页、下一首",
+      "font_class": "zuihouyiyemoyexiayishou",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "6129086",
+      "name": "48第一页、首页、上一首",
+      "font_class": "diyiyeshouyeshangyishou",
+      "unicode": "e76e",
+      "unicode_decimal": 59246
+    },
+    {
       "icon_id": "1250",
       "name": "其它",
       "font_class": "qita",

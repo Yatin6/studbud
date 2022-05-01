@@ -1,0 +1,89 @@
+.title {
+    margin-bottom: 50px;
+}
+
+.title i {
+    font-size: 30px;
+    font-weight: bold;
+    color: #5680E9;
+    float: left;
+}
+
+.title h2 {
+    text-align: center;
+}
+
+.bgc {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+.form_Width {
+    width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    color: #84CEEB;
+}
+
+input[type=text],
+[type=number] {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+#iname{
+    width:46%;
+    display: inline-block;
+}
+#lname{
+    float: right;
+    width:46%;
+}
+::placeholder{
+    color:#ccc;
+}
+#year{
+    width:46%;
+}
+label[for=webname]{ 
+    margin-left:266px;   
+}
+#webname{
+    width:46%;
+    float:right;
+}
+button{
+    margin-top: 10px;
+}
+#reference{
+    background-color: #5680E9;
+    color:white;
+    float: left;
+    width:100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0px;
+    margin-left:70px;
+    box-shadow:0px 1px 3px rgb(0 0 0 / 50%);
+}
+#linksave{
+    background-color: #5680E9;
+    color:white;
+    float:right;
+    width:100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0px;
+    margin-right:70px;
+    box-shadow:0px 1px 3px rgb(0 0 0 / 50%);
+}

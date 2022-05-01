@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="add_Link.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+</head>
+
+<body>
+    <header id="top_Bar">
+        <div class="fixed_Width">
+            <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
+            <div id="brand">
+                <a class="brand_Name" href="index.html">Study</a>
+                <a class="brand_Name" href="index.html">Conqueror</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="kanban_Board.html">Kanban Board</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="fixed_Width">
+        <div class="title">
+            <i class="iconfont">&#xe601;</i>
+            <h2>Add Link</h2>
+        </div>
+        <div class="form_Width">
+            <div class="bgc">
+                <form>
+                    <label for="note">Note *</label><br>
+                    <input type="text" id="note" name="note"><br>
+                    <label for="note">URL *</label><br>
+                    <input type="text" id="URL" name="URL"><br>
+                    <label for="title">Title</label><br>
+                    <input type="text" id="title" name="title">
+                    Author<br>
+                    <input type="text" id="iname" name="iname" placeholder="Initial name">
+                    <input type="text" id="lname" name="lname" placeholder="Last name"><br>
+                    <label for="year">Year</label>
+                    <label for="webname">Website Name</label><br>
+                    <input type="number" id="year" name="year">
+                    <input type="text" id="webname" name="webname"><br>
+                    <button id="reference">Generate<br>Reference</button>
+                    <button id="linksave">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
