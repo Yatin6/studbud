@@ -11,18 +11,24 @@
     margin-bottom: 100px;
 }
 
-/* set the width of the page */
+/* set the width of the webapp content, and put it into the center of the page */
 .fixed_Width {
     box-sizing: border-box;
     width: 1000px;
     height: 100%;
     margin: 0 auto;
     padding:0 5px;
+   
+}
+
+/* use flex to arrange the brand in the left and menu in the right */
+.bar_Content{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* give the distance between the logo and the brand name, and set the size of the logo */
 #logo {
     margin-right:12px;
     width: 35px;
@@ -75,6 +81,7 @@ a {
     background-color: white;
     color:#8860D0;
 }
+
 .middle{
     display: flex;
     justify-content: space-between;

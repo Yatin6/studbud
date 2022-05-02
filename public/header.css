@@ -13,76 +13,87 @@ i:hover{
 button:hover{
     cursor:pointer;
 }
+/* top purple bar */
 #top_Bar {
-    margin-bottom: 50px;
     height: 50px;
     background-color: #8860D0;
+    margin-bottom: 100px;
     position: relative;
     z-index: 0;
 }
+
+/* set the width of the webapp content, and put it into the center of the page */
 .fixed_Width {
+    box-sizing: border-box;
     width: 1000px;
+    height: 100%;
     margin: 0 auto;
+    padding:0 5px;
+   
 }
+
+/* use flex to arrange the brand in the left and menu in the right */
+.bar_Content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* give the distance between the logo and the brand name, and set the size of the logo */
 #logo {
-    margin:7.5px 0;
+    margin-right:12px;
+    width: 35px;
+}
+
+.bar_Left{
+    display:flex;
     height: 35px;
-    float: left;
 }
 
-#brand {
-    float: left;
-    margin:9px 10px;
+.brand{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
-
-.brand_Name {
-    display: block;
+.brand a{
     color: white;
     font-size: 12px;
 }
 
 #menu {
-    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
 a {
     text-decoration: none;
 }
 
-#menu ul {
+.menu ul {
     list-style: none;
 }
 
-#menu ul li {
+.menu ul li {
     display: inline;
-    line-height: 50px;
 }
 
-#menu ul li:first-child {
-    padding-right: 60px;
+.menu ul li:first-child {
+    margin-right: 60px;
 }
 
-#menu ul li a {
+.menu ul li a {
     color: white;
     font-size: 12px;
 }
-.aa{
-    width:40px;
-    height: 50px;
-    background-color:#612cc1;
-    display: none;
-    float: left;
-    position:relative;
-    top: 0px;
-    left:38px;
-}
-#menu ul li a:hover{
+
+.menu ul li a:hover{
     background-color: white;
     color:#8860D0;
 }
 
 /* music player css*/
-
 .musicplayer{
     background-color: #8860D0;
     margin:0 auto;
@@ -95,7 +106,6 @@ a {
     padding:5px 0px;
     border-radius:20px;
     position: relative;
-    top:9px;
 }
 .control, #current{
     height: 100%;
