@@ -1,62 +1,167 @@
 .title {
-    margin-bottom: 50px;
+    width:100%;
+    margin-bottom: 80px;
+    text-align: center;
     position: relative;
 }
-
-.title i {
+.title i{
     font-size: 30px;
     font-weight: bold;
     color: #5680E9;
-    float: left;
+    position:absolute;
+}
+.title .back {
+    left:0px;
+}
+.title #subtasks {
+    font-size: 19px;
+    left:550px;
+    top:15px;
 }
 
-.title h2 {
-    text-align: center;
-}
-#subtask{
-    font-size: 19px;
-    position:absolute;
-    right:410px;
-    bottom:-2px;
-}
 .combination{
-    margin:0px 35px;
+    width: 850px;
+    margin:0 auto;
+    background-color: #5680E9;
     color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 175px;
+    border-bottom-left-radius: 175px;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+    margin-bottom: 50px;
 }
+
 .subtask_Circle{
-    width:400px;
-    height:400px;
+    width:350px;
+    height:350px;
     border-radius: 50%;
     background-color:#5AB9EA;
-    float: left;
-    display:grid;
-    text-align: center;
-    justify-content: center;
-    grid-template-rows: repeat(7, 1fr);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    display: relative;
+    z-index: 1;
+}
+
+.subtask_Circle span:first-child{
+    font-size: 20px;
+    font-weight: bold;
+}
+.subtask_Circle span:nth-child(2){
+    font-size: 32px;
     
 }
-
-.subtask_Circle h4{
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.subtask_Circle h3{
-    grid-row-start: 4;
-    grid-row-end: 5;
-}
-
 .subtask_Circle button{
-    margin:0 auto;
-    width:100px;
-    height: 30px;
-    grid-row-start:6;
-    grid-row-end: 7;
+    width:30%;
+    height: 12%;
+    border-radius: 20px;
+    border: 0px;
+    background-color: white;
+    font-size: 15px;
+    color:#5AB9EA;
+    font-weight: bold;
 }
 .timer{
-    margin-left: 130px;
-    width:800px;
-    height:400px;
+    box-sizing: border-box;
+    padding:20px 0;
+    width:500px;
+    height:350px;
     border-radius: 70px;
     background-color:#5680E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left:-20px;
+}
+
+.timer_Buttons{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+.timer_Buttons button{
+    background-color: #5680E9;
+    border: none;
+    color: white;
+    line-height: 22px;
+    font-size: 15px;
+}
+.timer_Middle{
+    display: flex;
+}
+
+.timer_Middle .countdown{
+    font-size: 90px;
+    font-weight: bold;
+    letter-spacing: 12px;
+}
+
+.timer_Middle i{
+    margin-left: 10px;
+    margin-top:70px;
+    font-size: 20px;
+    position:absolute;
+    right:35px;
+}
+.set i{
+    font-size: 60px;
+    margin:0 40px;
+}
+.reference_List{
+    color:#5AB9EA;
+    margin-bottom: 60px;
+    align-items: center;
+}
+.ref_Top{
+    display: flex;
+    justify-content: space-between;
+    padding:6px 10px;
+    border-bottom: 1.5px solid #C1C8E4;
+}
+
+.ref_Top_Left{
+    display: flex;
+    align-items: center;
+}
+
+.ref_Top_Left h3{
+    margin-right: 40px;
+}
+
+.ref_Top_Left i{
+    font-weight: bold;
+}
+.add_Link{
+    padding:10px 10px;
+    border-bottom: 1.5px solid #C1C8E4;
+}
+.add_Link a{
+    margin-left: 30px;
+}
+.add_Link i{
+    font-weight: bold;
+}
+
+.new_Category{
+    width:15%;
+    height: 40px;
+    background-color: #5AB9EA;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: white;
+}
+.new_Category i{
+    font-size: 20px;
+    margin-right: 5px;
 }

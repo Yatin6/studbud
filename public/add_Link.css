@@ -1,15 +1,28 @@
-
+.title {
+    width:100%;
+    margin-bottom: 80px;
+    text-align: center;
+    position: relative;
+}
+.title i{
+    font-size: 30px;
+    font-weight: bold;
+    color: #5680E9;
+    position:absolute;
+}
+.title .back {
+    left:0px;
+}
 
 .bgc {
-    border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
-    height: 450px;
+    padding: 30px;
+    height: 530px;
     border-radius: 20px;
 }
 
 .form_Width {
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -21,12 +34,12 @@ input[type=text],
 [type=number] {
     width: 100%;
     padding: 8px 10px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-bottom: 15px;
+    margin-top: 10px;;
+    margin-bottom: 30px;
 }
 #iname{
     width:46%;
@@ -43,7 +56,7 @@ input[type=text],
     width:46%;
 }
 label[for=webname]{ 
-    margin-left:266px;   
+    margin-left:374px;   
 }
 #webname{
     width:46%;

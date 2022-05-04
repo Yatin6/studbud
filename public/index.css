@@ -96,12 +96,12 @@ a {
 }
 
 #index_Left button {
-    width: 100px;
-    height: 35px;
+    width: 110px;
+    height: 40px;
     border-radius: 20px;
     font-weight: 400;
-    font-size: 15px;
-    margin: 80px 0;
+    font-size: 18px;
+    margin-top:100px;
     background-color: #5680E9;
     color: white;
     border: 0px;

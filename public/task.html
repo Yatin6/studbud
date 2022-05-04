@@ -13,13 +13,30 @@
 
 <body>
     <header id="top_Bar">
-        <div class="fixed_Width">
-            <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
-            <div id="brand">
-                <a class="brand_Name" href="index.html">Study</a>
-                <a class="brand_Name" href="index.html">Conqueror</a>
+        <div class="bar_Content fixed_Width">
+            <div class="bar_Left">
+                <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
+                <div class="brand">
+                    <a href="index.html">Study</a>
+                    <a href="index.html">Conqueror</a>
+                </div>
             </div>
-            <nav id="menu">
+            <audio src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+            <div class="musicplayer">
+                <div class="control">
+                    <i class="iconfont">&#xe76e;</i>
+                    <i class="iconfont">&#xe87c;</i>
+                    <i class="iconfont">&#xe76d;</i>
+                </div>
+                <div class="information">
+                    Justin Timberlake - Five hundred miles
+                    <div class="bar">
+                        <div id="progress"></div>
+                    </div>
+                </div>
+                <div id="current">0:00</div>
+            </div>
+            <nav class="menu">
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
@@ -33,28 +50,72 @@
     </header>
     <div class="fixed_Width">
         <div class="title">
-            <i class="iconfont">&#xe601;</i>
+            <a href="kanban_Board.html"><i class="iconfont back">&#xe601;</i></a>
             <h2>Task</h2>
-            <i class="iconfont" id="subtask">&#xe614;</i>
+            <a href="kanban_Board.html"><i class="iconfont" id="subtasks">&#xe614;</i></a>
         </div>
+
         <div class="combination">
             <div class="subtask_Circle">
-                <h4>Step 1</h4>
-                <h3>Read the breif</h3>
+                <span>Step 1</span>
+                <span>Read the breif</span>
                 <button>Complete</button>
             </div>
+
             <div class="timer">
-                <div class="timer_Button">
+                <div class="timer_Buttons">
                     <button>Study</button>
                     <button>Short<br>break</button>
                     <button>Long<br>break</button>
                 </div>
-                <div id="countdown">00:00</div>
-                <i class="iconfont">&#xe61f;</i> </i>
+
+                <div class="timer_Middle">
+                    <div class="countdown">00:00</div>
+                    <i class="iconfont">&#xe61f;</i>
+                </div>
+
                 <div class="set">
-                    <i class="iconfont">&#xe87c;</i>
-                    <i class="iconfont">&#xe636;</i> </i>
+                    <i class="iconfont play">&#xe87c;</i>
+                    <i class="iconfont reset">&#xe636;</i> </i>
                 </div>
             </div>
         </div>
+
+        <div class="reference_List">
+            <div class="ref_Top">
+                <div class="ref_Top_Left">
+                    <h3>Reference Articles</h3>
+                    <i class="iconfont">&#xeb6a;</i>
+                </div>
+                <a>Open all</a>
+            </div>
+            <div class="add_Link">
+                <a>
+                    <i class="iconfont">&#xe8e1;</i>
+                    <span>Add Link</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="reference_List">
+            <div class="ref_Top">
+                <div class="ref_Top_Left">
+                    <h3>Course Materials</h3>
+                    <i class="iconfont">&#xeb6a;</i>
+                </div>
+                <a>Open all</a>
+            </div>
+            <div class="add_Link">
+                <a>
+                    <i class="iconfont">&#xe8e1;</i>
+                    <span>Add Link</span>
+                </a>
+            </div>
+        </div>
+
+        <button class="new_Category">
+            <i class="iconfont">&#xe604;</i>
+            <span>New Category</span>
+        </button>
     </div>
+</body>

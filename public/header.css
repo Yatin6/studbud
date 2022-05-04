@@ -7,7 +7,7 @@ h2{
     color:#5680E9;
 }
 
-i:hover{
+i:hover,a:hover{
     cursor: pointer;
 }
 button:hover{
@@ -17,7 +17,7 @@ button:hover{
 #top_Bar {
     height: 50px;
     background-color: #8860D0;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     position: relative;
     z-index: 0;
 }
