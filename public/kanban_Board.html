@@ -12,76 +12,149 @@
 </head>
 
 <body>
-    <header id="top_Bar">
-        <div class="bar_Content fixed_Width">
-            <div class="bar_Left">
-                <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
-                <div class="brand">
-                    <a href="index.html">Study</a>
-                    <a href="index.html">Conqueror</a>
-                </div>
-            </div>
-            <audio src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
-            <div class="musicplayer">
-                <div class="control">
-                    <i class="iconfont">&#xe76e;</i>
-                    <i class="iconfont">&#xe87c;</i>
-                    <i class="iconfont">&#xe76d;</i>
-                </div>
-                <div class="information">
-                    Justin Timberlake - Five hundred miles
-                    <div class="bar">
-                        <div id="progress"></div>
+    <header>
+        <div class="fixed">
+            <div id="top_Bar">
+                <div class="bar_Content fixed_Width">
+                    <div class="bar_Left">
+                        <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
+                        <div class="brand">
+                            <a href="index.html">Study</a>
+                            <a href="index.html">Conqueror</a>
+                        </div>
                     </div>
-                </div>
-                <div id="current">0:00</div>
+                    <audio src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+                    <div class="musicplayer">
+                        <div class="control">
+                            <i class="iconfont">&#xe76e;</i>
+                            <i class="iconfont">&#xe87c;</i>
+                            <i class="iconfont">&#xe76d;</i>
+                        </div>
+                        <div class="information">
+                            Justin Timberlake - Five hundred miles
+                            <div class="bar">
+                                <div id="progress"></div>
+                            </div>
+                        </div>
+                        <div id="current">0:00</div>
+                    </div>
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="kanban_Board.html">Kanban Board</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="menu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="kanban_Board.html">Kanban Board</a>
-                    </li>
-                </ul>
-            </nav>
         </div>
-    </header>
+    </div>
+</header>
     <div class="fixed_Width">
         <h2>Kanban Board</h2>
-        <div id="hl"></div>
         <div class="card_Column">
             <div class="card_Column_Name">
                 <h3>To do</h3>
                 <i class="iconfont">&#xeb6a;</i>
             </div>
-            <div class="card">
-                <form>
-                    <label for="Task">Task: </label>
-                    <input id="Task" type="text" name="Task"><br>
-                    <label for="Date">Due date: </label>
-                    <input id="Date" name="Date" type="date"> <br>
-                    <label for="Time">Completion Time: </label>
-                    <input id="Time" name="Time" type="time"><br>
-                    <label for="Estimate">Estimated completion time (in mins): </label>
-                    <input id="Estimate" name="Estimate" type="number" min="0" max="1000"><br>
-                    <label for="Priority">Task Priority: </label>
-                    <select id="Priority" name="Priority">
-                        <option value="">Select one</option>
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select><br>
+            <form class="card_Information">
+                <div class="first_Row">
+                    <div class="priority_Circle">
+                    </div>
+                    <span>Your task name here</span>
+                    <i class="iconfont">&#xe600;</i>
+                </div>
+                <div class="second_Row">
+                    <div class="second_Row_Top">
+                        <i class="iconfont">&#xe615;</i>
+                        <input id="Date" name="Date" type="date" required>
+                    </div>
+                    <label for="Date">Due date</label>
+                </div>
+                <div class="third_Row">
+                    <div class="third_Row_Top">
+                        <div class="third_Row_Left">
+                            <i class="iconfont">&#xe65f; </i>
+                            <input id="Time" name="Time" type="time" required>
+                        </div>
+                        <div class="third_Row_Right">
+                            <i class="iconfont">&#xe700;</i>
+                            <select id="Status" name="Status" required>
+                                <option value="">Select</option>
+                                <option value="not done">Undone</option>
+                                <option value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="third_Row_Bottom">
+                        <label for="Time">Estimate</label>
+                        <label for="Status">Status</label>
+                    </div>
+                </div>
+                <div class="button_Row">
                     <input class="Delete" type="submit" value="Delete">
                     <input class="Save" type="submit" value="Save">
-                </form>
-            </div>
+                </div>
+            </form>
             <div class="add_Task">
                 <i class="iconfont">&#xe8e1;</i>
-                <p>Add Task</p>
+                <span>Add Task</span>
             </div>
         </div>
+
+
+        <div class="card_Column">
+            <div class="card_Column_Name">
+                <h3>Doing</h3>
+                <i class="iconfont">&#xeb6a;</i>
+            </div>
+            <form class="card_Information">
+                <div class="first_Row">
+                    <div class="priority_Circle">
+                    </div>
+                    <span>Your task name here</span>
+                    <i class="iconfont">&#xe600;</i>
+                </div>
+                <div class="second_Row">
+                    <div class="second_Row_Top">
+                        <i class="iconfont">&#xe615;</i>
+                        <input id="Date" name="Date" type="date" required>
+                    </div>
+                    <label for="Date">Due date</label>
+                </div>
+                <div class="third_Row">
+                    <div class="third_Row_Top">
+                        <div class="third_Row_Left">
+                            <i class="iconfont">&#xe65f; </i>
+                            <input id="Time" name="Time" type="time" required>
+                        </div>
+                        <div class="third_Row_Right">
+                            <i class="iconfont">&#xe700;</i>
+                            <select id="Status" name="Status" required>
+                                <option value="">Select</option>
+                                <option value="not done">Undone</option>
+                                <option value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="third_Row_Bottom">
+                        <label for="Time">Estimate</label>
+                        <label for="Status">Status</label>
+                    </div>
+                </div>
+                <div class="button_Row">
+                    <input class="Delete" type="submit" value="Delete">
+                    <input class="Save" type="submit" value="Save">
+                </div>
+            </form>
+            <div class="add_Task">
+                <i class="iconfont">&#xe8e1;</i>
+                <span>Add Task</span>
+            </div>
+        </div>
+        
         <div class="add_Board">
             <i class="iconfont">&#xe604;</i>
             Add Board

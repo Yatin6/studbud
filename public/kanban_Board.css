@@ -1,3 +1,4 @@
+
 i {
     color: white;
     font-weight: bold;
@@ -17,6 +18,8 @@ h3{
     width: 31%;
     float: left;
     margin-right: 100px;
+    display: inline;
+    position: relative;
 }
 
 .card_Column_Name {
@@ -53,7 +56,7 @@ h3{
 
 .card_Information i {
     font-weight: normal;
-    font-size: 20px;
+    font-size: 19px;
     margin-right: 10px;
 }
 
@@ -73,7 +76,7 @@ h3{
 
 .first_Row {
     justify-content: space-between;
-    padding: 0 3%;
+    padding: 0 2%;
 }
 
 .second_Row,
@@ -149,29 +152,29 @@ label {
     box-sizing: border-box;
     width: 20%;
     height: 25px;
-    border-radius: 15%;
+    border-radius: 8px;
     padding: 2px;
     border: 0;
     background-color: white;
     color: #5AB9EA;
     font-weight: bold;
-
+    box-shadow: 0px 1px 2px rgb(0 0 0 / 40%);
 }
 
 .add_Task {
-    text-align: center;
+    width:fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
     color: #5AB9EA;
 }
 
 .add_Task i {
     color: #5AB9EA;
+    margin-right:4px;;
 }
 
-.add_Task p {
-    display: inline;
-}
-
-.add_Task p:hover {
+.add_Task:hover {
     cursor: pointer;
 }
 
@@ -182,16 +185,17 @@ label {
     border-radius: 10px;
     font-size: 13px;
     color: white;
-    line-height: 30px;
-    text-align: center;
     padding: 5px 10px;
     box-shadow: 0px 1px 3px rgb(0 0 0 / 50%);
     float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add_Board i {
-    color: white;
     font-size: 18px;
+    margin-right: 10px;
 }
 
 .add_Board:hover {

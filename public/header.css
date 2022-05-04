@@ -13,11 +13,23 @@ i:hover,a:hover{
 button:hover{
     cursor:pointer;
 }
+
+header{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+.fixed{
+    position: fixed;
+    left:0;
+    right: 0;
+}
 /* top purple bar */
 #top_Bar {
     height: 50px;
     background-color: #8860D0;
-    margin-bottom: 80px;
     position: relative;
     z-index: 0;
 }
@@ -29,7 +41,6 @@ button:hover{
     height: 100%;
     margin: 0 auto;
     padding:0 5px;
-   
 }
 
 /* use flex to arrange the brand in the left and menu in the right */
