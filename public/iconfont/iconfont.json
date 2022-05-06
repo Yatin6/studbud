@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1567664",
+      "name": "tick",
+      "font_class": "tick",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
       "icon_id": "29950",
       "name": "time",
       "font_class": "time",

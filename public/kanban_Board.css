@@ -1,7 +1,3 @@
-.no_Wrap{
-    white-space:nowrap;
-    position: relative;
-}
 i {
     color: white;
     font-weight: bold;
@@ -17,6 +13,13 @@ h2 {
 h3{
     font-size: 23px;
 }
+
+/* diplay the card column from left to right with no restrictions */
+.no_Wrap{
+    white-space:nowrap;
+    position: relative;
+}
+
 .card_Column {
     width: 310px;
     display: inline-block;
@@ -81,6 +84,18 @@ h3{
     padding: 0 2%;
 }
 
+/* user can't see the ellipsis normally */
+.first_Row i{
+    visibility: hidden;
+}
+
+/* when the user's mouse move on the card, the ellipsis will be shown to grab
+    usrs' attention to edit the card */
+.card_Information:hover .first_Row i{
+    visibility: visible;
+}
+
+/* display the label and input, and name as two rows */
 .second_Row,
 .third_Row {
     flex-direction: column;
