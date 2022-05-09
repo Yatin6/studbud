@@ -10,7 +10,6 @@ h2 {
     width: 260px;
     margin-bottom: 40px;
 }
-
 h3{
     font-size: 23px;
 }
@@ -48,153 +47,135 @@ h3{
     border: 2.5px solid white;
     border-radius: 50%;
 }
-.task_Information {
-    display: none;
-}
 
 .card_Information {
     box-sizing: border-box;
     background-color: #5AB9EA;
-    border-radius: 30px;
+    border-radius: 15%;
     padding: 8% 4%;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     color: white;
 }
-.info_First_Row{
-    display: flex;
-    margin-bottom: 10%;
-}
 
-.info_Second_Row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 5%;
-    margin-bottom: 0;
-    font-size: 5px;
-}
-
-.card_Form{
-    box-sizing: border-box;
-    background-color: #5AB9EA;
-    border-radius: 30px;
-    padding: 8% 6%;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
 .card_Information i {
     font-weight: normal;
-    
-}
-.info_First_Row i{
     font-size: 19px;
-}
-.info_Second_Row i{
-    font-size: 12px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
-input,select {
+#Date,
+#Time,
+#Status {
     text-align: center;
     color: #00000079;
-    height: 25px;
-    border-radius: 4px;
-    border:0;
 }
 
-
-.form_First_Row,
-.form_Second_Row,
-.form_Third_Row,
-.form_Forth_Row {
+.first_Row,
+.second_Row,
+.third_Row {
     display: flex;
     margin-bottom: 10%;
 }
 
-.info_First_Row {
+.first_Row {
     justify-content: space-between;
     padding: 0 2%;
 }
 
 /* user can't see the ellipsis normally */
-.info_First_Row i{
+.first_Row i{
     visibility: hidden;
 }
 
 /* when the user's mouse move on the card, the ellipsis will be shown to grab
     usrs' attention to edit the card */
-.card_Information:hover .info_First_Row i{
+.card_Information:hover .first_Row i{
     visibility: visible;
 }
 
 /* display the label and input, and name as two rows */
-.form_Second_Row, .form_First_Row, .form_Third_Row{
+.second_Row,
+.third_Row {
     flex-direction: column;
 }
 
-.hrs_Min{
+.second_Row_Top {
+    padding: 0 5%;
     display: flex;
-    justify-content:space-between;
     align-items: center;
-    font-size: 10px;
-}
-.hour_Width,
-.min_Width{
-    width:40%;
-}
-.form_Third_Row input{
-    width: 60%;
-    margin-right:5px;
 }
 
-.form_Forth_Row{
+.third_Row {
+    position: relative;
+}
+
+.third_Row i {
+    font-size: 22px;
+}
+
+.third_Row_Top {
+    display: flex;
     justify-content: space-between;
+    padding: 0 5%;
 }
-.card_Form label {
+
+.third_Row_Bottom {
+    display: flex;
+}
+
+.third_Row_Bottom label:nth-child(2) {
+    position: absolute;
+    left: 53%;
+}
+
+label {
     font-size: 10px;
-    margin-bottom: 2px;
 }
 
-.form_Forth_Row_Left {
-    width: 40%;
+#Date {
+    flex-grow: 1;
+}
+
+.third_Row_Left {
+    width: 44%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.form_Forth_Row_Right {
-    width: 40%;
+.third_Row_Right {
+    width: 44%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+
 }
 
-.form_Forth_Row select {
-    width: 100%;
+.third_Row_Left input,
+.third_Row_Right select {
+    width: 80%;
 }
 
-.submit{
-    width: 30%;
-    height: 30px;
-    margin:0 auto;
+#Status {
+    height: 25px;
+}
+
+.button_Row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button_Row input {
     box-sizing: border-box;
+    width: 20%;
+    height: 25px;
     border-radius: 8px;
     padding: 2px;
-    border: 2px solid white;
-    background-color: transparent;
+    border: 0;
+    background-color: white;
     color: #5AB9EA;
     font-weight: bold;
     box-shadow: 0px 1px 2px rgb(0 0 0 / 40%);
-    transition: all 0.2s ease;
-}
-.submit i{
-    font-size: 20px;
-    font-weight: normal;
-}
-.submit:hover{
-    background-color: #4bb5ea;   
 }
 
 .add_Task {
