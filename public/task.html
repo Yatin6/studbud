@@ -23,35 +23,38 @@
                             <a href="index.html">Conqueror</a>
                         </div>
                     </div>
-                    <audio src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+                    <audio class="song_Source"
+                        src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+                    <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
+                    <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
                     <div class="musicplayer">
                         <div class="control">
-                            <i class="iconfont">&#xe76e;</i>
-                            <i class="iconfont">&#xe87c;</i>
-                            <i class="iconfont">&#xe76d;</i>
+                            <i class="iconfont" id="lastBtn">&#xe76e;</i>
+                            <i class="iconfont icon-bofang" id="playBtn"></i>
+                            <i class="iconfont" id="nextBtn">&#xe76d;</i>
                         </div>
                         <div class="information">
-                            Justin Timberlake - Five hundred miles
+                            <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
                             <div class="bar">
                                 <div id="progress"></div>
                             </div>
                         </div>
                         <div id="current">0:00</div>
                     </div>
-                <nav class="menu">
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="kanban_Board.html">Kanban Board</a>
-                        </li>
-                    </ul>
-                </nav>
+                    <nav class="menu">
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="kanban_Board.html">Kanban Board</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     <div class="fixed_Width">
         <div class="title">
             <a href="kanban_Board.html"><i class="iconfont back">&#xe601;</i></a>
@@ -122,4 +125,6 @@
             <span>New Category</span>
         </button>
     </div>
+    <script src='task.js'></script>
+    <script src='musicPlayer.js'></script>
 </body>

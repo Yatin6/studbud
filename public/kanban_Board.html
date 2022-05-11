@@ -23,16 +23,17 @@
                             <a href="index.html">Conqueror</a>
                         </div>
                     </div>
-                    <audio
-                        src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+                    <audio class="song_Source" src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+                    <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
+                    <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
                     <div class="musicplayer">
                         <div class="control">
-                            <i class="iconfont">&#xe76e;</i>
-                            <i class="iconfont">&#xe87c;</i>
-                            <i class="iconfont">&#xe76d;</i>
+                            <i class="iconfont" id="lastBtn">&#xe76e;</i>
+                            <i class="iconfont icon-bofang" id="playBtn"></i>
+                            <i class="iconfont" id="nextBtn">&#xe76d;</i>
                         </div>
                         <div class="information">
-                            Justin Timberlake - Five hundred miles
+                            <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
                             <div class="bar">
                                 <div id="progress"></div>
                             </div>
@@ -53,8 +54,10 @@
             </div>
         </div>
     </header>
+    
     <div class="fixed_Width">
         <h2>Kanban Board</h2>
+        <!--  -->
         <div id="no_Wrap">
             <div class="card_Column">
                 <div class="card_Column_Name">
@@ -105,12 +108,12 @@
                             <i class="iconfont tick">&#xe6a9;</i>
                         </button>
                     </form>
-                    <div class="conceal_Card" draggable="true">
+                    <div class="conceal_Card" draggable="true" ondblclick="redirect()">
                         <div class="card_Information">
                             <div class="info_First_Row">
                                 <div class="priority_Circle"></div>
                                 <span></span>
-                                <i class="iconfont">&#xe600;</i>
+                                <i class="iconfont" id="ellipse">&#xe600;</i>
                             </div>
                             <div class="info_Second_Row">
                                 <div class="left">
@@ -126,6 +129,10 @@
                                     <span></span>
                                 </div>
                             </div>
+                            <ul class="drop_Down">
+                                <li><span id="task_Edit">Edit</span></li>
+                                <li><span id="task_Delete">Delete</span></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="conceal_Add">
@@ -139,7 +146,7 @@
             </div>
 
 
-            
+
             <div class="card_Column copy">
                 <div class="card_Column_Name">
                     <h3 contenteditable="true">Name new column</h3>
@@ -189,12 +196,12 @@
                             <i class="iconfont tick">&#xe6a9;</i>
                         </button>
                     </form>
-                    <div class="conceal_Card" draggable="true">
+                    <div class="conceal_Card" draggable="true" ondblclick="redirect()">
                         <div class="card_Information">
                             <div class="info_First_Row">
                                 <div class="priority_Circle"></div>
                                 <span></span>
-                                <i class="iconfont">&#xe600;</i>
+                                <i class="iconfont" id="ellipse">&#xe600;</i>
                             </div>
                             <div class="info_Second_Row">
                                 <div class="left">
@@ -210,6 +217,10 @@
                                     <span></span>
                                 </div>
                             </div>
+                            <ul class="drop_Down">
+                                <li><span id="task_Edit">Edit</span></li>
+                                <li><span id="task_Delete">Delete</span></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="conceal_Add">
@@ -222,8 +233,6 @@
             </div>
 
 
-
-
             <div id="add_Board">
                 <div class="arrange_Position">
                     <i class="iconfont">&#xe604;</i>
@@ -233,6 +242,7 @@
         </div>
     </div>
     <script src="kanban_Board.js"></script>
+    <script src="musicPlayer.js"></script>
 </body>
 
 </html>

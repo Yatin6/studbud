@@ -21,15 +21,18 @@
                     <a href="index.html">Conqueror</a>
                 </div>
             </div>
-            <audio src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+            <audio class="song_Source"
+                src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+            <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
+            <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
             <div class="musicplayer">
                 <div class="control">
-                    <i class="iconfont">&#xe76e;</i>
-                    <i class="iconfont">&#xe87c;</i>
-                    <i class="iconfont">&#xe76d;</i>
+                    <i class="iconfont" id="lastBtn">&#xe76e;</i>
+                    <i class="iconfont icon-bofang" id="playBtn"></i>
+                    <i class="iconfont" id="nextBtn">&#xe76d;</i>
                 </div>
                 <div class="information">
-                    Justin Timberlake - Five hundred miles
+                    <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
                     <div class="bar">
                         <div id="progress"></div>
                     </div>
@@ -49,7 +52,7 @@
         </div>
     </header>
     <div class="fixed_Width">
-        <div class="title"> 
+        <div class="title">
             <a href="task.html"><i class="iconfont back">&#xe601;</i></a>
             <h2>Add Link</h2>
         </div>

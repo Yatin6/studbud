@@ -1,0 +1,247 @@
+i {
+  color: #fff;
+  font-weight: bold;
+}
+
+h2 {
+  width: 260px;
+  border-bottom: 3px solid #5680e9;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+#no_Wrap {
+  white-space: nowrap;
+  display: flex;
+}
+
+.card_Column {
+  width: 310px;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  display: inline-block;
+}
+
+.copy {
+  display: none;
+}
+
+.card_Column_Name {
+  color: #5ab9ea;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.card_Column_Name i {
+  color: #5ab9ea;
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.priority_Circle {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+}
+
+.conceal_Card, .conceal_Add {
+  display: none;
+}
+
+.card_Information {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #5ab9ea;
+  border-radius: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 8% 4%;
+  display: flex;
+}
+
+.info_First_Row {
+  margin-bottom: 10%;
+  display: flex;
+}
+
+.info_Second_Row {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0 5%;
+  font-size: 5px;
+  display: flex;
+}
+
+.card_Form {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #5ab9ea;
+  border-radius: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 8% 6%;
+  display: flex;
+}
+
+.card_Information i {
+  font-weight: normal;
+}
+
+.info_First_Row i {
+  font-size: 19px;
+}
+
+.info_Second_Row i {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+input, select {
+  text-align: center;
+  color: #00000079;
+  height: 25px;
+  border: none;
+  border-radius: 4px;
+}
+
+.form_First_Row, .form_Second_Row, .form_Third_Row, .form_Forth_Row {
+  margin-bottom: 10%;
+  display: flex;
+}
+
+.info_First_Row {
+  justify-content: space-between;
+  padding: 0 2%;
+}
+
+.info_First_Row i {
+  visibility: hidden;
+}
+
+.card_Information:hover .info_First_Row i {
+  visibility: visible;
+}
+
+.form_Second_Row, .form_First_Row, .form_Third_Row {
+  flex-direction: column;
+}
+
+.hrs_Min {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  display: flex;
+}
+
+.hour_Width, .min_Width {
+  width: 40%;
+}
+
+.form_Third_Row input {
+  width: 60%;
+  margin-right: 5px;
+}
+
+.form_Forth_Row {
+  justify-content: space-between;
+}
+
+.card_Form label {
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.form_Forth_Row_Left, .form_Forth_Row_Right {
+  width: 40%;
+  flex-direction: column;
+  display: flex;
+}
+
+.form_Forth_Row select {
+  width: 100%;
+}
+
+.submit {
+  width: 30%;
+  height: 30px;
+  box-sizing: border-box;
+  color: #5ab9ea;
+  background-color: #0000;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 2px;
+  font-weight: bold;
+  transition: all .2s;
+  box-shadow: 0 1px 2px #0006;
+}
+
+.submit i {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.submit:hover {
+  background-color: #4bb5ea;
+}
+
+.add_Task {
+  width: fit-content;
+  color: #5ab9ea;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+}
+
+.add_Task i {
+  color: #5ab9ea;
+  margin-right: 4px;
+}
+
+.add_Task:hover {
+  cursor: pointer;
+}
+
+#add_Board {
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  background-color: #5ab9ea;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 13px;
+  box-shadow: 0 1px 3px #00000080;
+}
+
+#add_Board .arrange_Position {
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#add_Board i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#add_Board:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=kanban_Board.2ee2574a.css.map */

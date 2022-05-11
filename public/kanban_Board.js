@@ -1,11 +1,11 @@
 var taskList = [];
+// let taskSet = new Set()
 let submit = document.querySelectorAll('.submit');
 let tasks = document.querySelector('#tasks');
 let newTask = document.querySelectorAll('.add_Task');
 let newBoard = document.querySelector('#add_Board');
-let singleEle = document.querySelector('.card_Individual_Elements');
+let singleEle = document.querySelector('.copy .card_Individual_Elements');
 let cardColumnCopy = document.querySelector('.copy');
-
 let dragTask = null;
 let noWrap = document.querySelector('#no_Wrap');
 // Question 1: here, I want to reduce repetitive steps above by function. 
@@ -22,6 +22,8 @@ let noWrap = document.querySelector('#no_Wrap');
 function getDateValue(elements) {
   return elements.value.split("-");
 }
+let dropDownFlag = 'none'
+let dropDownTarget = null
 
 // submit.forEach((item) => {
 //   item.addEventListener('click', function (event) {
@@ -68,6 +70,7 @@ function getDateValue(elements) {
 
 function addTask(name, year, month, day, hours, minutes, priority, status) {
   let newTask = {
+    id:Date.now(),
     name: name,
     date: {
       year: year,
@@ -81,26 +84,28 @@ function addTask(name, year, month, day, hours, minutes, priority, status) {
     priority: priority,
     status: status
   }
+  // let temp = taskSet
+  // taskSet.add(Data.now())
+  // if()
   taskList.push(newTask);
 }
 
 noWrap.addEventListener("click", function (ev) {
   ev = ev || event;
   var target = ev.target || ev.srcElement;
-  console.log(target.id);
-  window.target = target;
+  let targetInfo = target.parentNode.parentNode;
   if (target.className.split(' ').includes('del')) {
-    target.parentNode.parentNode.remove();
-  } else if (target.className.split(' ').includes('tick')) {
+    targetInfo.remove();
+  } else if (target.className === "iconfont tick") {
     console.log(target);
-    let concealCard = target.parentNode.parentNode.parentNode.children[1];
+    let concealCard = targetInfo.parentNode.children[1];
     console.log(concealCard);
-    let taskName = target.parentNode.parentNode.querySelector('#Task');
-    let dueDate = target.parentNode.parentNode.querySelector('#Date');
-    let estimateHour = target.parentNode.parentNode.querySelector('#Hour');
-    let estimateMin = target.parentNode.parentNode.querySelector('#Minute');
-    let priority = target.parentNode.parentNode.querySelector('#Priority');
-    let status = target.parentNode.parentNode.querySelector('#Status');
+    let taskName = targetInfo.querySelector('#Task');
+    let dueDate = targetInfo.querySelector('#Date');
+    let estimateHour = targetInfo.querySelector('#Hour');
+    let estimateMin = targetInfo.querySelector('#Minute');
+    let priority = targetInfo.querySelector('#Priority');
+    let status = targetInfo.querySelector('#Status');
     if (taskName.value && dueDate.value && estimateHour.value && estimateMin.value && priority.value && status.value != "") {
       ev.preventDefault();
       let due = getDateValue(dueDate);
@@ -127,7 +132,6 @@ noWrap.addEventListener("click", function (ev) {
         case "Low":
           concealCard.querySelector('.priority_Circle').style.backgroundColor = "#A3EA6B";
       }
-
       target.parentNode.parentNode.style.display = "none";
       concealCard.style.display = "block";
       target.parentNode.parentNode.parentNode.children[2].style.display = "block";
@@ -143,9 +147,67 @@ noWrap.addEventListener("click", function (ev) {
     newestCard.style.display = "none";
     let newAdd = cloneCardDiv.children[2];
     newAdd.style.display = "none";
+  }else if(target.id==="task_Edit"){
+    console.log(target.parentNode.parentNode.parentNode);
+    // return
+    target.parentNode.parentNode.parentNode.style.display="none";
+    target.parentNode.parentNode.parentNode.parentNode.parentNode.children[2].style.display="none";
+    target.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].style.display="flex";
+  }
+  else if(target.id==="task_Delete"){
+        // let id = target.parentElement.getAttribute('data-id');
+        // let index = taskListArray.findIndex(task => task.id === Number(id));
+        // removeItemFromArray(taskListArray, index)
+    target.parentNode.parentNode.parentNode.remove();
+  }else if(target.id==="ellipse"){
+    // dropDownFlag = 'block'
+    // console.log('ellipse test');
+    // if(dropDownFlag === 'none'){
+    //   dropDownFlag = 'block'
+    // }else{
+    //   dropDownFlag = 'none'
+    // }
+    // dropDownTarget = target.parentNode.parentNode.querySelector('.drop_Down')
+    // console.log(dropDownTarget);
+    // dropDownTarget.style.display = dropDownFlag;
+
+    let tempTarget = target.parentNode.parentNode.querySelector('.drop_Down')
+    let flag = tempTarget.style.display
+    console.log(flag);
+    if(flag === 'none' || flag === ''){
+      flag = 'block'
+    } else {
+      flag = 'none'
+    }
+    console.log(flag);
+    tempTarget.style.display = flag
+    // target.addEventListener
   }
 });
 
+// noWrap.addEventListener('click',function (ev) {
+//   ev = ev || event;
+//   var target = ev.target || ev.srcElement;
+//   // if(dropDownFlag === 'block'){
+//   //   dropDownFlag = 'none'
+//   // }
+//   console.log('quanju test');
+//   if(target.id==="ellipse"){
+//     return ''
+//   }else{
+//     if(dropDownTarget){
+//       if(dropDownFlag==='block'){
+//         dropDownFlag = 'none'
+//         dropDownTarget.style.display = dropDownFlag
+//       }
+//       // console.log('test222')
+//     }
+//   }
+// })
+
+function redirect(){
+  location.replace("task.html");
+}
 // newTask.forEach((newItem) => {
 //   newItem.addEventListener('click', function (event) {
 //     newItem.style.display="none";
@@ -173,22 +235,25 @@ newBoard.addEventListener('click', function (event) {
 noWrap.addEventListener('dragstart', function (ev) {
   ev = ev || event;
   var target = ev.target || ev.srcElement;
+  var dragTask=target.cloneNode(true);
   if (target.className === "conceal_Card") {
-    dragTask = target;
-    console.log(dragTask);
-    console.log(target.parentNode.parentNode);
+    setTimeout(() => {
+      target.style.display = "none";
+    }, 0);
     target.addEventListener("dragend", function () {
       dragTask = null;
+      setTimeout(() => {
+        target.style.display = "block";
+      }, 0);
     });
     var cardColumnAll = noWrap.querySelectorAll('.card_Column');
     cardColumnAll.forEach((cardColumnAll) => {
-      cardColumnAll.addEventListener("dragover", function (e) {
-        e.preventDefault();
-      });
+      cardColumnAll.addEventListener("dragover", dragOver);
       cardColumnAll.addEventListener("dragenter", dragEnter);
       cardColumnAll.addEventListener("dragleave", dragLeave);
       cardColumnAll.addEventListener("drop", function () {
       cardColumnAll.insertBefore(dragTask, cardColumnAll.lastElementChild);
+      target.remove();
       });
     });
   }
@@ -222,17 +287,19 @@ noWrap.addEventListener('dragstart', function (ev) {
 // }
 
 
-// function dragOver(e) {
-//   e.preventDefault();
-//   console.log("dragOver");
-// }
-
-function dragEnter() {
-  console.log("dragEnter");
+function dragOver(e) {
+  e.preventDefault();
+  console.log("dragOver");
 }
 
-function dragLeave() {
-  console.log("dragLeave");
+ function dragEnter() {
+   this.style.border="1px dashed #ccc"
+   console.log("dragEnter");
+ }
+
+ function dragLeave() {
+   this.style.border="none";
+   console.log("dragLeave");
 }
 
 // function dragDrop() {

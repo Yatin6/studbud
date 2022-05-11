@@ -1,0 +1,7 @@
+div {
+  color: red;
+}
+div p {
+  display: none;
+  text-align: center;
+}

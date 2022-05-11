@@ -1,0 +1,86 @@
+@font-face {
+  font-family: iconfont;
+  src: url("iconfont.4f9fd2db.woff2") format("woff2"), url("iconfont.978f17eb.woff") format("woff"), url("iconfont.d9534e7d.ttf") format("truetype");
+}
+
+.iconfont {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-style: normal;
+  font-family: iconfont !important;
+}
+
+.icon-tick:before {
+  content: "";
+}
+
+.icon-time:before {
+  content: "";
+}
+
+.icon-flag:before {
+  content: "";
+}
+
+.icon-zanting:before {
+  content: "";
+}
+
+.icon-zuihouyiyemoyexiayishou:before {
+  content: "";
+}
+
+.icon-diyiyeshouyeshangyishou:before {
+  content: "";
+}
+
+.icon-qita:before {
+  content: "";
+}
+
+.icon-fanhui:before {
+  content: "";
+}
+
+.icon-bianji:before {
+  content: "";
+}
+
+.icon-zhongfu:before {
+  content: "";
+}
+
+.icon-jia:before {
+  content: "";
+}
+
+.icon-bofang:before {
+  content: "";
+}
+
+.icon-shanchu:before {
+  content: "";
+}
+
+.icon-guanbi:before {
+  content: "";
+}
+
+.icon-rili:before {
+  content: "";
+}
+
+.icon-tianjia:before {
+  content: "";
+}
+
+.icon-shezhi:before {
+  content: "";
+}
+
+.icon-child-task:before {
+  content: "";
+}
+
+/*# sourceMappingURL=kanban_Board.2082a417.css.map */

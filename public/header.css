@@ -1,17 +1,20 @@
+/* This css files format the header style and other styles that could 
+   apply to kanban_Board, task and add_Link pages */
+
+/* clear the preset margin and padding and set the font for all the
+   text as sans-serif like what I've propsed */
 * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
+
 h2{
     color:#5680E9;
 }
 
-i:hover,a:hover{
+i:hover,a:hover, button:hover{
     cursor: pointer;
-}
-button:hover{
-    cursor:pointer;
 }
 
 header{
@@ -157,7 +160,7 @@ a {
 }
 #progress{
     display: block;
-    width:var(--progress,10%);
+    width:var(--progress,0%);
     background-color: rgba(255,255,255,60%);
     transition: all 1s linear;
     height: 100%;

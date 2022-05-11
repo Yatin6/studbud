@@ -26,6 +26,7 @@ h3{
     display: inline-block;
     margin-right: 100px;
     margin-bottom: 50px;
+    -webkit-user-select:none;
     user-select: none;
     flex-shrink: 0;
 }
@@ -65,6 +66,34 @@ h3{
     display: flex;
     flex-direction: column;
     color: white;
+    position:relative;
+}
+
+.drop_Down{
+    width:80px;
+    height: 50px;
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    top:50px;
+    right: -13px;
+    list-style: none;
+    box-shadow:0px 0px 8px rgb(0 0 0 / 50%);
+    display: none;
+}
+
+.drop_Down li{
+    height: 50%;
+    text-align: center;
+    color:#4bb5ea;
+    font-size: 8px;
+    line-height: 25px;
+}
+.drop_Down li span:hover{
+    cursor: pointer;
+}
+.drop_Down li:first-child{
+    border-bottom: 1.5px solid #5AB9EA;;
 }
 .info_First_Row{
     display: flex;
@@ -94,7 +123,9 @@ h3{
     font-weight: normal;
     
 }
-.info_First_Row i{
+
+/* user can't see the ellipsis normally */
+#ellipse{
     font-size: 19px;
 }
 .info_Second_Row i{
@@ -124,16 +155,14 @@ input,select {
     padding: 0 2%;
 }
 
-/* user can't see the ellipsis normally */
-.info_First_Row i{
-    visibility: hidden;
-}
+
+
 
 /* when the user's mouse move on the card, the ellipsis will be shown to grab
     usrs' attention to edit the card */
-.card_Information:hover .info_First_Row i{
+/* .card_Information:hover .info_First_Row i{
     visibility: visible;
-}
+} */
 
 /* display the label and input, and name as two rows */
 .form_Second_Row, .form_First_Row, .form_Third_Row{
@@ -206,6 +235,7 @@ input,select {
 
 .add_Task {
     width:fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
     display: flex;
     align-items: center;
