@@ -1,248 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="kanban_Board.css">
-    <link rel="stylesheet" href="./iconfont/iconfont.css">
-</head>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="kanban_Board.css" />
+    <link rel="stylesheet" href="./iconfont/iconfont.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="fixed">
-            <div id="top_Bar">
-                <div class="bar_Content fixed_Width">
-                    <div class="bar_Left">
-                        <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
-                        <div class="brand">
-                            <a href="index.html">Study</a>
-                            <a href="index.html">Conqueror</a>
-                        </div>
-                    </div>
-                    <audio class="song_Source" src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
-                    <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
-                    <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
-                    <div class="musicplayer">
-                        <div class="control">
-                            <i class="iconfont" id="lastBtn">&#xe76e;</i>
-                            <i class="iconfont icon-bofang" id="playBtn"></i>
-                            <i class="iconfont" id="nextBtn">&#xe76d;</i>
-                        </div>
-                        <div class="information">
-                            <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
-                            <div class="bar">
-                                <div id="progress"></div>
-                            </div>
-                        </div>
-                        <div id="current">0:00</div>
-                    </div>
-                    <nav class="menu">
-                        <ul>
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="kanban_Board.html">Kanban Board</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+      <div class="fixed">
+        <div id="top_Bar">
+          <div class="bar_Content fixed_Width">
+            <div class="bar_Left">
+              <a href="index.html"><img id="logo" src="./Images/logo.png" /></a>
+              <div class="brand">
+                <a href="index.html">Study</a>
+                <a href="index.html">Conqueror</a>
+              </div>
             </div>
+            <audio class="song_Source" src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+            <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
+            <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
+            <div class="musicplayer">
+              <div class="control">
+                <i class="iconfont" id="lastBtn">&#xe76e;</i>
+                <i class="iconfont icon-bofang" id="playBtn"></i>
+                <i class="iconfont" id="nextBtn">&#xe76d;</i>
+              </div>
+              <div class="information">
+                <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
+                <div class="bar">
+                  <div id="progress"></div>
+                </div>
+              </div>
+              <div id="current">0:00</div>
+            </div>
+            <nav class="menu">
+              <ul>
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                  <a href="kanban_Board.html">Kanban Board</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
     </header>
-    
     <div class="fixed_Width">
-        <h2>Kanban Board</h2>
-        <!--  -->
-        <div id="no_Wrap">
-            <div class="card_Column">
-                <div class="card_Column_Name">
-                    <h3 contenteditable="true">To do</h3>
-                    <i class="iconfont del">&#xeb6a;</i>
+      <h2>Kanban Board</h2>
+      <div id="no_Wrap">
+        <div class="card_Column">
+          <div class="card_Column_Name">
+            <h3 contenteditable="true">To do</h3>
+            <i class="iconfont del">&#xeb6a;</i>
+          </div>
+          <div class="card_Individual_Elements">
+            <form class="card_Form">
+              <div class="index_num" style="display: none;">num test</div>
+              <div class="form_First_Row">
+                <label for="Task">Task name</label>
+                <input id="Task" type="text" name="Task" maxlength="40" required />
+              </div>
+              <div class="form_Second_Row">
+                <label for="Date">Due date</label>
+                <input id="Date" name="Date" type="date" required />
+              </div>
+              <div class="form_Third_Row">
+                <label>Estimate time</label>
+                <div class="hrs_Min">
+                  <div class="hour_Width"><input id="Hour" name="Hour" type="number" min="0" max="100" required />hour(s)</div>
+                  <div class="min_Width"><input id="Minute" name="Minute" type="number" min="0" max="60" required />min(s)</div>
                 </div>
-                <div class="card_Individual_Elements">
-                    <form class="card_Form">
-                        <div class="form_First_Row">
-                            <label for="Task">Task name</label>
-                            <input id="Task" type="text" name="Task" maxlength="40" required>
-                        </div>
-                        <div class="form_Second_Row">
-                            <label for="Date">Due date</label>
-                            <input id="Date" name="Date" type="date" required>
-                        </div>
-                        <div class="form_Third_Row">
-                            <label>Estimate time</label>
-                            <div class="hrs_Min">
-                                <div class="hour_Width">
-                                    <input id="Hour" name="Hour" type="number" min="0" max="100" required>hour(s)
-                                </div>
-                                <div class="min_Width">
-                                    <input id="Minute" name="Minute" type="number" min="0" max="60" required>min(s)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form_Forth_Row">
-                            <div class="form_Forth_Row_Left">
-                                <label for="Priority">Task Priority</label>
-                                <select id="Priority" name="Priority" required>
-                                    <option value="">Select one</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="High">High</option>
-                                </select>
-                            </div>
-                            <div class="form_Forth_Row_Right">
-                                <label for="Status">Status</label>
-                                <select id="Status" name="Status" required>
-                                    <option value="">Select one</option>
-                                    <option value="not done">Undone</option>
-                                    <option value="done">Done</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="submit">
-                            <i class="iconfont tick">&#xe6a9;</i>
-                        </button>
-                    </form>
-                    <div class="conceal_Card" draggable="true" ondblclick="redirect()">
-                        <div class="card_Information">
-                            <div class="info_First_Row">
-                                <div class="priority_Circle"></div>
-                                <span></span>
-                                <i class="iconfont" id="ellipse">&#xe600;</i>
-                            </div>
-                            <div class="info_Second_Row">
-                                <div class="left">
-                                    <i class="iconfont">&#xe615;</i>
-                                    <span></span>
-                                </div>
-                                <div class="middle">
-                                    <i class="iconfont">&#xe65f; </i>
-                                    <span></span>
-                                </div>
-                                <div class="right">
-                                    <i class="iconfont">&#xe700;</i>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <ul class="drop_Down">
-                                <li><span id="task_Edit">Edit</span></li>
-                                <li><span id="task_Delete">Delete</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="conceal_Add">
-                        <div class="add_Task">
-                            <i class="iconfont plus">&#xe8e1;</i>
-                            <span class="plus">Add Task</span>
-                        </div>
-                    </div>
-
+              </div>
+              <div class="form_Forth_Row">
+                <div class="form_Forth_Row_Left">
+                  <label for="Priority">Task Priority</label>
+                  <select id="Priority" name="Priority" required>
+                    <option value="">Select one</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
                 </div>
+                <div class="form_Forth_Row_Right">
+                  <label for="Status">Status</label>
+                  <select id="Status" name="Status" required>
+                    <option value="">Select one</option>
+                    <option value="not done">Undone</option>
+                    <option value="done">Done</option>
+                  </select>
+                </div>
+              </div>
+              <button class="submit">
+                <i class="iconfont tick">&#xe6a9;</i>
+              </button>
+            </form>
+            <div class="conceal_Card" draggable="true" ondblclick="redirect()">
+              <div class="card_Information">
+                <div class="info_First_Row">
+                  <div class="priority_Circle"></div>
+                  <span></span>
+                  <i class="iconfont" id="ellipse">&#xe600;</i>
+                </div>
+                <div class="info_Second_Row">
+                  <div class="left">
+                    <i class="iconfont">&#xe615;</i>
+                    <span></span>
+                  </div>
+                  <div class="middle">
+                    <i class="iconfont">&#xe65f; </i>
+                    <span></span>
+                  </div>
+                  <div class="right">
+                    <i class="iconfont">&#xe700;</i>
+                    <span></span>
+                  </div>
+                </div>
+                <ul class="drop_Down">
+                  <li><span id="task_Edit">Edit</span></li>
+                  <li><span id="task_Delete">Delete</span></li>
+                </ul>
+              </div>
             </div>
-
-
-
-            <div class="card_Column copy">
-                <div class="card_Column_Name">
-                    <h3 contenteditable="true">Name new column</h3>
-                    <i class="iconfont del">&#xeb6a;</i>
-                </div>
-                <div class="card_Individual_Elements">
-                    <form class="card_Form">
-                        <div class="form_First_Row">
-                            <label for="Task">Task name</label>
-                            <input id="Task" type="text" name="Task" maxlength="30" required>
-                        </div>
-                        <div class="form_Second_Row">
-                            <label for="Date">Due date</label>
-                            <input id="Date" name="Date" type="date" required>
-                        </div>
-                        <div class="form_Third_Row">
-                            <label>Estimate time</label>
-                            <div class="hrs_Min">
-                                <div class="hour_Width">
-                                    <input id="Hour" name="Hour" type="number" min="0" max="100" required>hour(s)
-                                </div>
-                                <div class="min_Width">
-                                    <input id="Minute" name="Minute" type="number" min="0" max="60" required>min(s)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form_Forth_Row">
-                            <div class="form_Forth_Row_Left">
-                                <label for="Priority">Task Priority</label>
-                                <select id="Priority" name="Priority" required>
-                                    <option value="">Select one</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="High">High</option>
-                                </select>
-                            </div>
-                            <div class="form_Forth_Row_Right">
-                                <label for="Status">Status</label>
-                                <select id="Status" name="Status" required>
-                                    <option value="">Select one</option>
-                                    <option value="not done">Undone</option>
-                                    <option value="done">Done</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="submit">
-                            <i class="iconfont tick">&#xe6a9;</i>
-                        </button>
-                    </form>
-                    <div class="conceal_Card" draggable="true" ondblclick="redirect()">
-                        <div class="card_Information">
-                            <div class="info_First_Row">
-                                <div class="priority_Circle"></div>
-                                <span></span>
-                                <i class="iconfont" id="ellipse">&#xe600;</i>
-                            </div>
-                            <div class="info_Second_Row">
-                                <div class="left">
-                                    <i class="iconfont">&#xe615;</i>
-                                    <span></span>
-                                </div>
-                                <div class="middle">
-                                    <i class="iconfont">&#xe65f; </i>
-                                    <span></span>
-                                </div>
-                                <div class="right">
-                                    <i class="iconfont">&#xe700;</i>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <ul class="drop_Down">
-                                <li><span id="task_Edit">Edit</span></li>
-                                <li><span id="task_Delete">Delete</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="conceal_Add">
-                        <div class="add_Task">
-                            <i class="iconfont plus">&#xe8e1;</i>
-                            <span class="plus">Add Task</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="conceal_Add">
+              <div class="add_Task">
+                <i class="iconfont plus">&#xe8e1;</i>
+                <span class="plus">Add Task</span>
+              </div>
             </div>
-
-
-            <div id="add_Board">
-                <div class="arrange_Position">
-                    <i class="iconfont">&#xe604;</i>
-                    <span>Add Board</span>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="card_Column copy">
+          <div class="card_Column_Name">
+            <h3 contenteditable="true">Name new column</h3>
+            <i class="iconfont del">&#xeb6a;</i>
+          </div>
+          <div class="card_Individual_Elements">
+            <form class="card_Form">
+              <div class="index_num" style="display: none">num test</div>
+              <div class="form_First_Row">
+                <label for="Task">Task name</label>
+                <input id="Task" type="text" name="Task" maxlength="30" required />
+              </div>
+              <div class="form_Second_Row">
+                <label for="Date">Due date</label>
+                <input id="Date" name="Date" type="date" required />
+              </div>
+              <div class="form_Third_Row">
+                <label>Estimate time</label>
+                <div class="hrs_Min">
+                  <div class="hour_Width"><input id="Hour" name="Hour" type="number" min="0" max="100" required />hour(s)</div>
+                  <div class="min_Width"><input id="Minute" name="Minute" type="number" min="0" max="60" required />min(s)</div>
+                </div>
+              </div>
+              <div class="form_Forth_Row">
+                <div class="form_Forth_Row_Left">
+                  <label for="Priority">Task Priority</label>
+                  <select id="Priority" name="Priority" required>
+                    <option value="">Select one</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                  </select>
+                </div>
+                <div class="form_Forth_Row_Right">
+                  <label for="Status">Status</label>
+                  <select id="Status" name="Status" required>
+                    <option value="">Select one</option>
+                    <option value="not done">Undone</option>
+                    <option value="done">Done</option>
+                  </select>
+                </div>
+              </div>
+              <button class="submit">
+                <i class="iconfont tick">&#xe6a9;</i>
+              </button>
+            </form>
+            <div class="conceal_Card" draggable="true" ondblclick="redirect()">
+              <div class="card_Information">
+                <div class="info_First_Row">
+                  <div class="priority_Circle"></div>
+                  <span></span>
+                  <i class="iconfont" id="ellipse">&#xe600;</i>
+                </div>
+                <div class="info_Second_Row">
+                  <div class="left">
+                    <i class="iconfont">&#xe615;</i>
+                    <span></span>
+                  </div>
+                  <div class="middle">
+                    <i class="iconfont">&#xe65f; </i>
+                    <span></span>
+                  </div>
+                  <div class="right">
+                    <i class="iconfont">&#xe700;</i>
+                    <span></span>
+                  </div>
+                </div>
+                <ul class="drop_Down">
+                  <li><span id="task_Edit">Edit</span></li>
+                  <li><span id="task_Delete">Delete</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="conceal_Add">
+              <div class="add_Task">
+                <i class="iconfont plus">&#xe8e1;</i>
+                <span class="plus">Add Task</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="add_Board">
+          <div class="arrange_Position">
+            <i class="iconfont">&#xe604;</i>
+            <span>Add Board</span>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="kanban_Board.js"></script>
     <script src="musicPlayer.js"></script>
-</body>
-
+  </body>
 </html>
