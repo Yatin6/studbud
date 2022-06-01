@@ -1,103 +1,84 @@
 let songSource = document.querySelectorAll(".song_Source")
-console.log(songSource)
 let progress = document.getElementById("progress")
 let playBtn = document.getElementById("playBtn")
 let lastBtn = document.getElementById("lastBtn")
 let nextBtn = document.getElementById("nextBtn")
 let playTitle = document.getElementById("playTitle")
-let songTitles = [
-    'Justin Timberlake - Five hundred miles',
-    'Tycho - Epoch',
-    'Emancipator - Nevergreen'
-]
-playTitle.innerHTML = songTitles[0]
+let songTitles = ["Justin Timberlake - Five hundred miles", "Tycho - Epoch", "Emancipator - Nevergreen"]
 
+//initialize the first song's name and index to 0
+playTitle.innerHTML = songTitles[0]
 let index = 0
 let currentSong = songSource[index]
+
+// the user click on the "next" icon
 nextBtn.addEventListener("click", nextSong)
 function nextSong() {
-    console.log("下一首之前", currentSong)
-    currentSong.pause() // 将点击下一首时播放的歌曲暂停
-    currentSong.currentTime = 0 // 重置歌曲时间为0
-    index += 1
-    // console.log(index, songSource.length)
-    // if(index==songSource.length-1){
-    //     index=0;
-    // }
-    if (index === songSource.length) {
-        index = 0
-    }
-    // console.log(index)
-    currentSong = songSource[index]
-    console.log("下一首之后", currentSong)
-    playTitle.innerHTML = songTitles[index]
-    currentSong.play()
-    playBtn.classList.remove("icon-bofang")
-    playBtn.classList.add("icon-zanting")
-    return 0
+  currentSong.pause() // pause the current song when skip to the next song
+  currentSong.currentTime = 0 // set the next song's starting time to 0
+  index += 1 //point to the next song
+  if (index === songSource.length) { //point to the first song if the current song is the last song
+    index = 0
+  }
+  currentSong = songSource[index]  //update the current song
+  playTitle.innerHTML = songTitles[index] //update the current song's name
+  currentSong.play()
+  playBtn.classList.remove("icon-bofang") //replace the "play" button in the middle with "pause" as the song is playing now
+  playBtn.classList.add("icon-zanting")
+  return 0
 }
 
+// the user click on the "last" icon
 lastBtn.addEventListener("click", lastSong)
-
 function lastSong() {
-    console.log("上一首之前", currentSong)
-    currentSong.pause() // 将点击上一首时播放的歌曲暂停
-    currentSong.currentTime = 0 // 重置歌曲时间为0
-    index -= 1
+  currentSong.pause() // pause the current song when go back to the last song
+  currentSong.currentTime = 0 // set the next song's starting time to 0
+  index -= 1  //point to the last song
 
-    if (index === -1) {
-        index = songSource.length - 1
-    }
-    // console.log(index)
-    currentSong = songSource[index]
-    console.log("上一首之后", currentSong)
-    playTitle.innerHTML = songTitles[index]
+  if (index === -1) {   //point to the last song if the current song is the first song
+    index = songSource.length - 1
+  }
+  currentSong = songSource[index]  //update the current song
+  playTitle.innerHTML = songTitles[index]  //update the current song's name
+  currentSong.play()
+  playBtn.classList.remove("icon-bofang")  //replace the "play" button in the middle with "pause" as the song is playing now
+  playBtn.classList.add("icon-zanting")
+  return 0
+}
+
+// the user click on the "pause" icon
+playBtn.addEventListener("click", playpauseSwitch)
+//pause the song if the song is playing, play the song if the song is pausing, and switch the icon icon between "pause" and "play" 
+function playpauseSwitch() {
+  if (currentSong.paused) {
     currentSong.play()
     playBtn.classList.remove("icon-bofang")
     playBtn.classList.add("icon-zanting")
-    return 0
+  } else {
+    currentSong.pause()
+    playBtn.classList.add("icon-bofang")
+    playBtn.classList.remove("icon-zanting")
+  }
 }
 
-playBtn.addEventListener("click", playpauseSwitch)
-
-// currentSong.onplay = function () {
-//   playBtn.classList.remove("icon-bofang")
-//   playBtn.classList.add("icon-zanting")
-// }
-
-// currentSong.onpause = function () {
-//   playBtn.classList.add("icon-bofang")
-//   playBtn.classList.remove("icon-zanting")
-// }
-
-function playpauseSwitch() {
-    if (currentSong.paused) {
-        currentSong.play()
-        playBtn.classList.remove("icon-bofang")
-        playBtn.classList.add("icon-zanting")
-    } else {
-        currentSong.pause()
-        playBtn.classList.add("icon-bofang")
-        playBtn.classList.remove("icon-zanting")
-    }
-}
-
+// set the progress bar, make it align with the time elpase
 for (let i = 0; i < songSource.length; i++) {
-    let currentSong = songSource[i]
-    currentSong.ontimeupdate = function () {
-        let currentTime = currentSong.currentTime
-        current.innerHTML = timeFormat(currentTime)
-        let duration = currentSong.duration
-        prog = (currentTime * 100) / duration
-        progress.style.setProperty("--progress", prog + "%")
-    }
+  let currentSong = songSource[i]
+  currentSong.ontimeupdate = function () {
+    let currentTime = currentSong.currentTime
+    current.innerHTML = timeFormat(currentTime)
+    let duration = currentSong.duration
+    prog = (currentTime * 100) / duration
+    progress.style.setProperty("--progress", prog + "%")
+  }
 }
 
+// display the time in miniute and second
 function timeFormat(currentTime) {
-    minutes = Math.floor(currentTime / 60)
-    seconds = Math.floor(currentTime % 60)
-    if (seconds < 10) {
-        seconds = "0" + seconds
-    }
-    return minutes + ":" + seconds
+  minutes = Math.floor(currentTime / 60)
+  seconds = Math.floor(currentTime % 60)
+  if (seconds < 10) {
+    seconds = "0" + seconds
+  }
+  return minutes + ":" + seconds
 }

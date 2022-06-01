@@ -2,131 +2,191 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="task.css">
-    <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="task.css">
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
 </head>
 
 <body>
-    <header>
-        <div class="fixed">
-            <div id="top_Bar">
-                <div class="bar_Content fixed_Width">
-                    <div class="bar_Left">
-                        <a href="index.html"><img id="logo" src="./Images/logo.png"></a>
-                        <div class="brand">
-                            <a href="index.html">Study</a>
-                            <a href="index.html">Conqueror</a>
-                        </div>
-                    </div>
-                    <audio class="song_Source"
-                        src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
-                    <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
-                    <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
-                    <div class="musicplayer">
-                        <div class="control">
-                            <i class="iconfont" id="lastBtn">&#xe76e;</i>
-                            <i class="iconfont icon-bofang" id="playBtn"></i>
-                            <i class="iconfont" id="nextBtn">&#xe76d;</i>
-                        </div>
-                        <div class="information">
-                            <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
-                            <div class="bar">
-                                <div id="progress"></div>
-                            </div>
-                        </div>
-                        <div id="current">0:00</div>
-                    </div>
-                    <nav class="menu">
-                        <ul>
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="kanban_Board.html">Kanban Board</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="fixed_Width">
-        <div class="title">
-            <a href="kanban_Board.html"><i class="iconfont back">&#xe601;</i></a>
-            <h2>Task</h2>
-            <i class="iconfont" id="subtasks">&#xe614;</i>
-        </div>
-        <div class="add_Subtasks">
-            
-        </div>
-        <div class="combination">
-            <div class="subtask_Circle">
-                <span>Step</span>
-                <span>Add subtasks first</span>
-                <button>Complete</button>
-            </div>
 
-            <div class="timer">
-                <div class="timer_Buttons">
-                    <button>Study</button>
-                    <button>Short<br>break</button>
-                    <button>Long<br>break</button>
-                </div>
-
-                <div class="timer_Middle">
-                    <div class="countdown">00:00</div>
-                    <i class="iconfont">&#xe61f;</i>
-                </div>
-
-                <div class="set">
-                    <i class="iconfont play">&#xe87c;</i>
-                    <i class="iconfont reset">&#xe636;</i> </i>
-                </div>
+  <!-- top bar section -->
+  <header>
+    <div class="fixed">
+      <div id="top_Bar">
+        <!-- top bar content here -->
+        <div class="bar_Content fixed_Width">
+          <!-- logo and website name on the left -->
+          <div class="bar_Left">
+            <a href="index.html"><img id="logo" src="./Images/logo.png" /></a>
+            <div class="brand">
+              <a href="index.html">Study</a>
+              <a href="index.html">Conqueror</a>
             </div>
+          </div>
+          <!-- music source(three songs) -->
+          <audio class="song_Source"
+            src="./songs/Justin Timberlake _ Carey Mulligan _ Stark Sands - Five Hundred Miles.mp3"></audio>
+          <audio class="song_Source" src="./songs/Emancipator - Nevergreen.mp3"></audio>
+          <audio class="song_Source" src="./songs/Tycho - Epoch.mp3"></audio>
+          <!-- music player -->
+          <div class="musicplayer">
+            <div class="control">
+              <i class="iconfont" id="lastBtn">&#xe76e;</i>
+              <i class="iconfont icon-bofang" id="playBtn"></i>
+              <i class="iconfont" id="nextBtn">&#xe76d;</i>
+            </div>
+            <div class="information">
+              <span id="playTitle"> Justin Timberlake - Five hundred miles </span>
+              <div class="bar">
+                <div id="progress"></div>
+              </div>
+            </div>
+            <div id="current">0:00</div>
+          </div>
+          <!-- navigation menu on the right -->
+          <nav class="menu">
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="kanban_Board.html">Kanban Board</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-
-        <div class="reference_List">
-            <div class="ref_Top">
-                <div class="ref_Top_Left">
-                    <h3>Reference Articles</h3>
-                    <i class="iconfont">&#xeb6a;</i>
-                </div>
-                <a>Open all</a>
-            </div>
-            <div class="add_Link">
-                <a>
-                    <i class="iconfont">&#xe8e1;</i>
-                    <span>Add Link</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="reference_List">
-            <div class="ref_Top">
-                <div class="ref_Top_Left">
-                    <h3>Course Materials</h3>
-                    <i class="iconfont">&#xeb6a;</i>
-                </div>
-                <a>Open all</a>
-            </div>
-            <div class="add_Link">
-                <a>
-                    <i class="iconfont">&#xe8e1;</i>
-                    <span>Add Link</span>
-                </a>
-            </div>
-        </div>
-
-        <button class="new_Category">
-            <i class="iconfont">&#xe604;</i>
-            <span>New Category</span>
-        </button>
+      </div>
     </div>
-    <script src='task.js'></script>
-    <script src='musicPlayer.js'></script>
+  </header>
+  <div class="task_wrap">
+    <div class="fixed_Width" id="task_content" style="display: block;">
+      <!-- title (from user's preset) and subtask icon -->
+      <div class="title">
+        <a href="kanban_Board.html"><i class="iconfont back">&#xe601;</i></a>
+        <h2>Task</h2>
+        <i class="iconfont subtask_Icon">&#xe614;</i>
+      </div>
+      <!-- poping up content when the user press the subtask icon -->
+      <ol class="add_Subtasks" style="display: none;">
+        <h5>Set your steps</h5>
+        <button class="add_Subtasks_Button">Add Step</button>
+      </ol>
+      <!-- the subtask circle and timer combination -->
+      <div class="combination">
+        <!-- subtask circle -->
+        <div class="subtask_Circle">
+          <span class="step_title">Current Step</span>
+          <span class="step_details">Add subtasks first</span>
+          <button>Complete</button>
+        </div>
+        <!-- the timer -->
+        <div class="timer">
+          <!-- study, short break and long break buttons -->
+          <div class="timer_Buttons">
+            <button data-time="study" class="clicked">Study<br></button>
+            <button data-time="short_break">Short<br>break</button>
+            <button data-time="long_break">Long<br>break</button>
+            <!-- according to the user test, participants say they are tending to click on the long break by themselves. So I add a div to disable the user to click these three buttons by themselves -->
+            <div class="time_background"></div>
+          </div>
+          <!-- time and setting icon -->
+          <div class="timer_Middle">
+            <div class="countdown">00:00</div>
+            <i class="iconfont">&#xe61f;</i>
+          </div>
+          <!-- play and skip icon -->
+          <div class="set">
+            <i class="iconfont play icon-bofang" id="start_time"></i>
+            <i class="iconfont reset" id="reset_time">&#xe76d;</i>
+          </div>
+        </div>
+        <!-- the popuping setting window when the user click on the setting icon  -->
+        <div class="time_setting">
+          <div class="setting_title">
+            <h3>Time(mins)</h3>
+          </div>
+          <div class="setting_wrap">
+            <div><span>Study</span><input type="number" id="study"></div>
+            <div><span>Short break</span><input type="number" id="short_break"></div>
+            <div><span>Long break</span><input type="number" id="long_break"></div>
+          </div>
+          <div class="setting2"><span>Long break interval</span><input type="number" id="interval"></div>
+          <div class="button_wrap">
+            <button id="cancel">Cancel</button>
+            <button id="save">Save</button>
+          </div>
+        </div>
+      </div>
+      <!-- content for each link category, like the kanban board, it will be duplicated once the user want to add a new category, that's why it also has a class called copy -->
+      <div class="reference_List copy">
+        <div class="ref_Top">
+          <div class="ref_Top_Left">
+            <h3 contenteditable="true" style="-webkit-user-select: auto">New link list</h3>
+            <i class="iconfont">&#xeb6a;</i>
+          </div>
+          <a>Open all</a>
+          <div class="link_num" style="display: none;">num test</div>
+        </div>
+        <div class="add_Link">
+          <a>
+            <i class="iconfont">&#xe8e1;</i>
+            <span>Add Link</span>
+          </a>
+        </div>
+      </div>
+      <!-- the edit ellipse won't come out until the user add the link -->
+      <div style="display: none;">
+        <div class="editWrap">
+          <i class="iconfont" id="ellipse">&#xe600;</i>
+          <ul class="drop_Down" style="display: none;">
+            <li><span id="task_Edit">Edit</span></li>
+            <li><span id="task_Delete">Delete</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- add new category button -->
+      <button class="new_Category">
+        <i class="iconfont">&#xe604;</i>
+        <span>New Category</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- the add link "page" enables user to create and modify the link information. It is concealed until the user want to add a new link -->
+  <div class="add_link_wrap" style="display: none;">
+    <div class="fixed_Width">
+      <div class="title">
+        <a><i class="iconfont back">&#xe601;</i></a>
+        <h2>Add Link</h2>
+      </div>
+      <!-- the add link input form -->
+      <div class="form_Width">
+        <div class="bgc">
+          <form>
+            <label for="note">Note *</label><br />
+            <input type="text" id="note" name="note" /><br />
+            <label for="note">URL *</label><br />
+            <input type="text" id="URL" name="URL" /><br />
+            <label for="title">Title</label><br />
+            <input type="text" id="title" name="title" />
+            Author<br/>
+            <input type="text" id="iname" name="iname" placeholder="Initial name" />
+            <input type="text" id="lname" name="lname" placeholder="Last name" /><br />
+            <label for="year">Year</label>
+            <label for="webname">Website Name</label><br />
+            <input type="number" id="year" name="year" />
+            <input type="text" id="webname" name="webname" /><br />
+            <button id="reference">Generate<br />Reference</button>
+            <button id="linksave">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='task.js'></script>
+  <script src='musicPlayer.js'></script>
 </body>

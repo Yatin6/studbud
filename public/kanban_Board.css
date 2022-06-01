@@ -1,278 +1,284 @@
 i {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 30px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #5680E9;
-    width: 260px;
-    margin-bottom: 40px;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #5680e9;
+  width: 260px;
+  margin-bottom: 40px;
 }
 
-h3{
-    font-size: 23px;
+h3 {
+  font-size: 23px;
 }
 
-/* diplay the card column from left to right with no restrictions */
-#no_Wrap{
-    white-space:nowrap;
-    display: flex;
+/* diplay card columns from left to right with no restrictions */
+#no_Wrap {
+  white-space: nowrap;
+  display: flex;
 }
 
+/* set the width of each column and gap between columns */
 .card_Column {
-    width: 310px;
-    display: inline-block;
-    margin-right: 100px;
-    margin-bottom: 50px;
-    -webkit-user-select:none;
-    user-select: none;
-    flex-shrink: 0;
+  width: 310px;
+  display: inline-block;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.copy{
-    display: none;
+
+/* conceal the column at the begining until the user click on the "add board" button */
+.copy {
+  display: none;
 }
+
+/* position the name of the column and the "cross" icon in left and right  */
 .card_Column_Name {
-    color: #5AB9EA;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  color: #5ab9ea;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card_Column_Name i{
-    color:#5AB9EA;
-    font-size: 20px;
-    margin-right:12px;
+.card_Column_Name i {
+  color: #5ab9ea;
+  font-size: 20px;
+  margin-right: 12px;
 }
 
+/* only give the priority circle border without background color */
 .priority_Circle {
-    width: 20px;
-    height: 20px;
-    border: 2.5px solid white;
-    border-radius: 50%;
-}
-.conceal_Card, .conceal_Add {
-    display: none;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid white;
+  border-radius: 50%;
 }
 
+/* conceal the card and add task button at first (wait until the user fill in the task information) */
+.conceal_Card,
+.conceal_Add {
+  display: none;
+}
+
+/* the card, which comes out after user submit the form */
 .card_Information {
-    box-sizing: border-box;
-    background-color: #5AB9EA;
-    border-radius: 20px;
-    padding: 8% 4%;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    position:relative;
+  box-sizing: border-box;
+  background-color: #5ab9ea;
+  border-radius: 20px;
+  padding: 8% 4%;
+  /* margin-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+/* deeper color when hovering on the card */
+.card_Information:hover{
+  background-color: rgb(85, 177, 222)
+}
+/* drop down menu when user click on ellipse */
+.drop_Down {
+  width: 80px;
+  height: 50px;
+  background-color: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 50px;
+  right: -13px;
+  list-style: none;
+  box-shadow: 0px 0px 8px rgb(0 0 0 / 50%);
+  display: none;
+}
+.drop_Down li {
+  height: 50%;
+  text-align: center;
+  color: #4bb5ea;
+  font-size: 8px;
+  line-height: 25px;
+}
+.drop_Down li span:hover {
+  cursor: pointer;
+}
+.drop_Down li:first-child {
+  border-bottom: 1.5px solid #52aad6;
 }
 
-.drop_Down{
-    width:80px;
-    height: 50px;
-    background-color: white;
-    border-radius: 6px;
-    position: absolute;
-    top:50px;
-    right: -13px;
-    list-style: none;
-    box-shadow:0px 0px 8px rgb(0 0 0 / 50%);
-    display: none;
+/* card first row (priority circle, title and the ellipse) */
+.info_First_Row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-bottom: 10%;
 }
 
-.drop_Down li{
-    height: 50%;
-    text-align: center;
-    color:#4bb5ea;
-    font-size: 8px;
-    line-height: 25px;
-}
-.drop_Down li span:hover{
-    cursor: pointer;
-}
-.drop_Down li:first-child{
-    border-bottom: 1.5px solid #5AB9EA;;
-}
-.info_First_Row{
-    display: flex;
-    margin-bottom: 10%;
+/* card first row (due date, estimate completion time and completion status) */
+.info_Second_Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5%;
+  margin-bottom: 0;
+  font-size: 10px;
 }
 
-.info_Second_Row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 5%;
-    margin-bottom: 0;
-    font-size: 10px;
-}
-
-.card_Form{
-    box-sizing: border-box;
-    background-color: #5AB9EA;
-    border-radius: 20px;
-    padding: 8% 6%;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
 .card_Information i {
-    font-weight: normal;
-    
+  font-weight: normal;
+  cursor: default;
 }
 
-/* user can't see the ellipsis normally */
-#ellipse{
-    font-size: 19px;
-}
-.info_Second_Row i{
-    font-size: 12px;
-    margin-right: 5px;
+#ellipse {
+  font-size: 19px;
 }
 
-input,select {
-    text-align: center;
-    color: #00000079;
-    height: 25px;
-    border-radius: 4px;
-    border:0;
+/* control three icons:date, time and status */
+.info_Second_Row i {
+  font-size: 12px;
+  margin-right: 5px;
 }
 
+/* the input form */
+.card_Form {
+  box-sizing: border-box;
+  background-color: #5ab9ea;
+  border-radius: 20px;
+  padding: 8% 6%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.card_Form label {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+/* format the input and select */
+input,
+select {
+  text-align: center;
+  color: #00000079;
+  height: 25px;
+  border-radius: 4px;
+  border: 0;
+}
 
 .form_First_Row,
 .form_Second_Row,
 .form_Third_Row,
 .form_Forth_Row {
-    display: flex;
-    margin-bottom: 10%;
+  display: flex;
+  margin-bottom: 10%;
 }
 
-.info_First_Row {
-    justify-content: space-between;
-    padding: 0 2%;
+/* display the label and input as two rows */
+.form_First_Row,
+.form_Second_Row,
+.form_Third_Row {
+  flex-direction: column;
 }
 
-
-
-
-/* when the user's mouse move on the card, the ellipsis will be shown to grab
-    usrs' attention to edit the card */
-/* .card_Information:hover .info_First_Row i{
-    visibility: visible;
-} */
-
-/* display the label and input, and name as two rows */
-.form_Second_Row, .form_First_Row, .form_Third_Row{
-    flex-direction: column;
-}
-
-.hrs_Min{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    font-size: 10px;
+/* display the hours and minutes input form in a line and adjust their width */
+.hrs_Min {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
 }
 .hour_Width,
-.min_Width{
-    width:40%;
+.min_Width {
+  width: 40%;
 }
-.form_Third_Row input{
-    width: 60%;
-    margin-right:5px;
-}
-
-.form_Forth_Row{
-    justify-content: space-between;
-}
-.card_Form label {
-    font-size: 10px;
-    margin-bottom: 2px;
+.form_Third_Row input {
+  width: 60%;
+  margin-right: 5px;
 }
 
-.form_Forth_Row_Left {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+/* position the priority and status in the forth row left and right */
+.form_Forth_Row {
+  justify-content: space-between;
 }
-
-.form_Forth_Row_Right {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+.form_Forth_Row_Left, .form_Forth_Row_Right{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
 }
-
 .form_Forth_Row select {
-    width: 100%;
+  width: 100%;
 }
 
-.submit{
-    width: 30%;
-    height: 30px;
-    margin:0 auto;
-    box-sizing: border-box;
-    border-radius: 8px;
-    padding: 2px;
-    border: 2px solid white;
-    background-color: transparent;
-    color: #5AB9EA;
-    font-weight: bold;
-    box-shadow: 0px 1px 2px rgb(0 0 0 / 40%);
-    transition: all 0.2s ease;
+/* submit button in the form and hover effect */
+.submit {
+  width: 30%;
+  height: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 2px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: #5ab9ea;
+  font-weight: bold;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 40%);
+  transition: all 0.2s ease;
 }
-.submit i{
-    display: inline-block;
-    width: 100%;
-    height:100%;
-    font-size: 20px;
-    font-weight: normal;
+.submit i {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: normal;
 }
-.submit:hover{
-    background-color: #4bb5ea;   
+.submit:hover {
+  background-color: #4bb5ea;
 }
 
+/* add task button */
 .add_Task {
-    width:fit-content;
-    width: -moz-fit-content;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    color: #5AB9EA;
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  color: #5ab9ea;
 }
-
 .add_Task i {
-    color: #5AB9EA;
-    margin-right:4px;;
+  color: #5ab9ea;
+  margin-right: 4px;
 }
-
 .add_Task:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+/* add board button */
 #add_Board {
-    width: 100px;
-    height: 30px;
-    background-color: #5AB9EA;
-    border-radius: 10px;
-    font-size: 13px;
-    color: white;
-    padding: 5px 10px;
-    box-shadow: 0px 1px 3px rgb(0 0 0 / 50%);
+  width: 100px;
+  height: 30px;
+  background-color: #5ab9ea;
+  border-radius: 10px;
+  font-size: 13px;
+  color: white;
+  padding: 5px 10px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 50%);
 }
-#add_Board .arrange_Position{
-    height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+#add_Board .arrange_Position {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #add_Board i {
-    font-size: 18px;
-    margin-right: 10px;
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 #add_Board:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

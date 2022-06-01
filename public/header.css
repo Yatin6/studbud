@@ -1,167 +1,187 @@
-/* This css files format the header style and other styles that could 
-   apply to kanban_Board, task and add_Link pages */
+/* This css files format the header style and any other formats that could be
+   applied to all pages */
 
 /* clear the preset margin and padding and set the font for all the
-   text as sans-serif like what I've propsed */
-* {
+   text as sans-serif as what I've propsed */
+   * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-}
+  }
+  
+  /* set the title color */
+  h2 {
+    color: #5680e9;
+  }
 
-h2{
-    color:#5680E9;
-}
+  a {
+    text-decoration: none;
+  }
 
-i:hover,a:hover, button:hover{
+  /* change the cursor to pointer when user hover on icons, "a" tags and buttons*/
+  i:hover,
+  a:hover,
+  button:hover {
     cursor: pointer;
-}
-
-header{
+  }
+  
+  /* set the header */
+  header {
     width: 100%;
     height: 50px;
     margin-bottom: 80px;
     position: relative;
-    z-index: 1;
-}
-.fixed{
+    z-index: 100;
+  }
+
+  /* fixed the header content to enable users to see it all the time even they scroll the page */
+  .fixed {
     position: fixed;
-    left:0;
+    left: 0;
     right: 0;
-}
-/* top purple bar */
-#top_Bar {
+  }
+
+  /* top purple bar */
+  #top_Bar {
     height: 50px;
-    background-color: #8860D0;
+    background-color: #8860d0;
     position: relative;
     z-index: 0;
-}
-
-/* set the width of the webapp content, and put it into the center of the page */
-.fixed_Width {
-    box-sizing: border-box;
-    width: 1000px;
+  }
+  
+  /* arrange the brand and name in the left and menu in the right of the top bar. Posititon them vertically center */
+  .bar_Content {
     height: 100%;
-    margin: 0 auto;
-    padding:0 5px;
-}
-
-/* use flex to arrange the brand in the left and menu in the right */
-.bar_Content{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* give the distance between the logo and the brand name, and set the size of the logo */
-#logo {
-    margin-right:12px;
+  }
+  
+  /* set the distance between the logo and the brand name, and set the size of the logo */
+  #logo {
+    margin-right: 12px;
     width: 35px;
-}
-
-.bar_Left{
-    display:flex;
+  }
+  
+  /* align the logo and website name(study conqueror) in a line */
+  .bar_Left {
+    display: flex;
     height: 35px;
-}
-
-.brand{
+  }
+  
+  /* vertically display the "study" and "conqueror" */
+  .brand {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
-}
-.brand a{
+  }
+  
+  .brand a {
     color: white;
     font-size: 12px;
-}
-
-#menu {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-a {
-    text-decoration: none;
-}
-
-.menu ul {
+  }
+  
+  .menu ul {
     list-style: none;
-}
-
-.menu ul li {
+  }
+  
+  /* display the ul items in a line */
+  .menu ul li {
     display: inline;
-}
-
-.menu ul li:first-child {
+  }
+  
+  .menu ul li:first-child {
     margin-right: 60px;
-}
-
-.menu ul li a {
+  }
+  
+  /* set the padding here for having more white background area when hovering */
+  .menu ul li a {
     color: white;
     font-size: 12px;
-}
-
-.menu ul li a:hover{
+    padding:3px 5px;
+    border-radius: 2px;
+  }
+  
+  /* hover effect here */
+  .menu ul li a:hover {
     background-color: white;
-    color:#8860D0;
-}
+    color: #8860d0;
+  }
+  
+  /* music player css*/
 
-/* music player css*/
-.musicplayer{
-    background-color: #8860D0;
-    margin:0 auto;
-    width:440px;
-    display:grid;
+  /* set the basic attribute of the music player and use grid to "divide" the music player into three parts: icons, song information and time */
+  .musicplayer {
+    background-color: #8860d0;
+    margin: 0 auto;
+    width: 440px;
+    display: grid;
     grid-template-columns: 1fr 2fr 0.8fr;
-    color:white;
-    font-size:12px;
-    grid-gap:10px;
-    padding:5px 0px;
-    border-radius:20px;
+    color: white;
+    font-size: 12px;
+    grid-gap: 10px;
+    padding: 5px 0px;
+    border-radius: 20px;
     position: relative;
-}
-.control, #current{
+  }
+
+  /* further position the icons and time in center*/
+  .control,
+  #current {
     height: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.musicplayer .iconfont{
-    font-size:12px;
-    margin:0 5px;
-    color:white;
-}
-.musicplayer .iconfont:nth-child(1){
-    font-size: 20px;
-}
-.musicplayer .iconfont:nth-child(3){
-    font-size: 20px;
-}
-.information{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-#current{
-    text-align: right;
-}
-.bar{
-    --space:-2px;
+  }
+
+  .musicplayer .iconfont {
+    font-size: 12px;
+    margin: 0 5px;
+    color: white;
+  }
+
+  .musicplayer .iconfont:nth-child(1) {
+    font-size: 20px;
+  }
+  
+  .musicplayer .iconfont:nth-child(3) {
+    font-size: 20px;
+  }
+  
+  .information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* put the progress bar behind the music player, but set its size 2px bigger than the width and height of the music player, so it's like adding a "border" */
+  .bar {
+    --space: -2px;
     background-color: #00000024;
     overflow: hidden;
-    top:var(--space);
-    bottom:var(--space);
-    left:var(--space);
-    right:var(--space);
-    position:absolute;
+    top: var(--space);
+    bottom: var(--space);
+    left: var(--space);
+    right: var(--space);
+    position: absolute;
     border-radius: 20px;
     z-index: -1;
-}
-#progress{
+  }
+  
+  /* apply a brighter color and assign a variable to the width to show the progress move */
+  #progress {
     display: block;
-    width:var(--progress,0%);
-    background-color: rgba(255,255,255,60%);
-    transition: all 1s linear;
+    width: var(--progress, 0%);
+    background-color: rgba(255, 255, 255, 60%);
+    transition: all 0.1s linear;
     height: 100%;
-}
+  }
+  
+  /* set the width and height of the webapp content, and place it to the center of the page */
+  .fixed_Width {
+    box-sizing: border-box;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 5px;
+    position: relative;
+  }

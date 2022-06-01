@@ -1,167 +1,486 @@
-.title {
-    width:100%;
-    margin-bottom: 80px;
-    text-align: center;
-    position: relative;
-}
-.title i{
-    font-size: 30px;
-    font-weight: bold;
-    color: #5680E9;
-    position:absolute;
-}
-.title .back {
-    left:0px;
-}
-.title #subtasks {
-    font-size: 19px;
-    left:550px;
-    top:15px;
+.copy {
+  display: none;
 }
 
-.combination{
-    width: 850px;
-    margin:0 auto;
-    background-color: #5680E9;
-    color:white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 175px;
-    border-bottom-left-radius: 175px;
-    border-top-right-radius: 70px;
-    border-bottom-right-radius: 70px;
-    margin-bottom: 50px;
+/* the title of the task */
+.task_wrap .title {
+  width: 100%;
+  margin-bottom: 80px;
+  text-align: center;
+  position: relative;
 }
 
-.subtask_Circle{
-    width:350px;
-    height:350px;
-    border-radius: 50%;
-    background-color:#5AB9EA;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    display: relative;
-    z-index: 1;
+/* format both back and subtask icon */
+.task_wrap .title i {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5680e9;
+  position: absolute;
 }
 
-.subtask_Circle span:first-child{
-    font-size: 20px;
-    font-weight: bold;
-}
-.subtask_Circle span:nth-child(2){
-    font-size: 32px;
-    
-}
-.subtask_Circle button{
-    width:30%;
-    height: 12%;
-    border-radius: 20px;
-    border: 0px;
-    background-color: white;
-    font-size: 15px;
-    color:#5AB9EA;
-    font-weight: bold;
-}
-.timer{
-    box-sizing: border-box;
-    padding:20px 0;
-    width:500px;
-    height:350px;
-    border-radius: 70px;
-    background-color:#5680E9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    left:-20px;
+/* "back" icon */
+.task_wrap .title .back {
+  left: 0px;
 }
 
-.timer_Buttons{
-    width: 500px;
-    display: flex;
-    justify-content: space-around;
-}
-.timer_Buttons button{
-    background-color: #5680E9;
-    border: none;
-    color: white;
-    line-height: 22px;
-    font-size: 15px;
-}
-.timer_Middle{
-    display: flex;
+/* the subtask icon */
+.task_wrap .title .subtask_Icon {
+  font-size: 19px;
+  left: 560px;
+  top: 15px;
 }
 
-.timer_Middle .countdown{
-    font-size: 90px;
-    font-weight: bold;
-    letter-spacing: 12px;
+/* format the popup area that allow users to add subtasks after they click the subtask icon  */
+.task_wrap .add_Subtasks {
+  width: 300px;
+  padding: 5px;
+  background-color: white;
+  color: #5ab9ea;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  position: absolute;
+  left: calc(50% - 150px);
+  top: 50px;
+  z-index: 10;
 }
 
-.timer_Middle i{
-    margin-left: 10px;
-    margin-top:70px;
-    font-size: 20px;
-    position:absolute;
-    right:35px;
-}
-.set i{
-    font-size: 60px;
-    margin:0 40px;
-}
-.reference_List{
-    color:#5AB9EA;
-    margin-bottom: 60px;
-    align-items: center;
-}
-.ref_Top{
-    display: flex;
-    justify-content: space-between;
-    padding:6px 10px;
-    border-bottom: 1.5px solid #C1C8E4;
+/* title of the popup content */
+.task_wrap .add_Subtasks h5 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.ref_Top_Left{
-    display: flex;
-    align-items: center;
+/* "add step" button */
+.task_wrap .add_Subtasks button {
+  width: 100%;
+  padding: 5px 0;
+  background-color: #5ab9ea;
+  color: white;
+  border: none;
+  border-radius: 3px;
 }
 
-.ref_Top_Left h3{
-    margin-right: 40px;
+.task_wrap .wrap {
+  table-layout: fixed;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
 }
 
-.ref_Top_Left i{
-    font-weight: bold;
-}
-.add_Link{
-    padding:10px 10px;
-    border-bottom: 1.5px solid #C1C8E4;
-}
-.add_Link a{
-    margin-left: 30px;
-}
-.add_Link i{
-    font-weight: bold;
+/* the circle and rectangle combination  */
+.task_wrap .combination {
+  width: 850px;
+  margin: 0 auto;
+  background-color: #5680e9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 175px;
+  border-bottom-left-radius: 175px;
+  border-top-right-radius: 70px;
+  border-bottom-right-radius: 70px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
-.new_Category{
-    width:15%;
-    height: 40px;
-    background-color: #5AB9EA;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 50px;
-    font-weight: bold;
-    color: white;
+/* format the content vertically in the circle and horizontally center in the circle */
+.task_wrap .subtask_Circle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #5ab9ea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  display: relative;
+  z-index: 1;
 }
-.new_Category i{
-    font-size: 20px;
-    margin-right: 5px;
+
+/* "Current Step" formatting with a line in the bottom */
+.task_wrap .subtask_Circle span:first-child {
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid white;
+}
+
+/* user's current subtask displaying here */
+.task_wrap .subtask_Circle span:nth-child(2) {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* the "complete" button */
+.task_wrap .subtask_Circle button {
+  width: 30%;
+  height: 12%;
+  border-radius: 20px;
+  border: 0px;
+  background-color: white;
+  font-size: 15px;
+  color: #5ab9ea;
+  font-weight: bold;
+}
+
+/* timer section on the right */
+.task_wrap .timer {
+  box-sizing: border-box;
+  padding: 20px 0;
+  width: 500px;
+  height: 350px;
+  border-radius: 70px;
+  background-color: #5680e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: -20px;
+}
+
+/* three buttons section (study, short break and long break), the "first line" of the timer */
+.timer_Buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+/* uniformly format each buttons  */
+.timer_Buttons button {
+  background-color: #5680e9;
+  padding: 10px !important;
+  border: none;
+  color: white;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+/* the background color to indicate the current pomodoro session */
+.clicked {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  border-radius: 5px;
+}
+
+/* according to the user test, this section used to cover the three buttons to let them unclickable */
+.timer_Buttons .time_background {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: -2px;
+}
+
+/* the "second row of the timer", countdown and setting icon */
+.task_wrap .timer_Middle {
+  display: flex;
+}
+
+/* countdown */
+.task_wrap .timer_Middle .countdown {
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 12px;
+}
+
+/* setting icon */
+.task_wrap .timer_Middle i {
+  margin-left: 10px;
+  margin-top: 70px;
+  font-size: 20px;
+  position: absolute;
+  right: 35px;
+}
+
+/* the timing and study interval setting popup window */
+.time_setting {
+  display: none;
+  padding: 25px 35px;
+  border-radius: 20px;
+  position: absolute;
+  background-color: #fff;
+  width: 360px;
+  margin-left: 320px;
+  margin-top: 5px;
+}
+
+.time_setting input[type="text"],
+.time_setting [type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px 0;
+  background-color: #f3f5f3ad;
+}
+
+.time_setting .setting_title {
+  color: #5680e9;
+  margin-bottom: 10px;
+}
+
+.time_setting span {
+  color: #5680e9;
+}
+
+.time_setting .setting2 input {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.time_setting .setting_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.time_setting .setting_wrap>div {
+  padding: 0 5px;
+}
+
+.time_setting .setting_wrap>div:nth-child(2) {
+  padding: 0 20px;
+}
+
+.time_setting .button_wrap {
+  display: flex;
+  padding: 0 50px;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.time_setting .button_wrap button {
+  background-color: #6f7de0;
+  color: #fff;
+  border: 0;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+/* format the play and skip icon */
+.task_wrap .set i {
+  font-size: 60px;
+  margin: 0 40px;
+}
+
+/* the reference list section */
+.task_wrap .reference_List {
+  color: #5ab9ea;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+/* format the category title and the cross icon on the left, and open all link on the right*/
+.task_wrap .ref_Top {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1.5px solid #c1c8e4;
+}
+
+/* format the category title and the cross icon in a line */
+.task_wrap .ref_Top_Left {
+  display: flex;
+  align-items: center;
+}
+
+/* set the distance between the title and the cross icon */
+.task_wrap .ref_Top_Left h3 {
+  margin-right: 40px;
+}
+
+.task_wrap .ref_Top_Left i {
+  font-weight: bold;
+}
+
+/* format the Add Link button */
+.task_wrap .add_Link {
+  padding: 10px 10px;
+  border-bottom: 1.5px solid #c1c8e4;
+}
+
+.task_wrap .add_Link a {
+  margin-left: 30px;
+}
+
+.task_wrap .add_Link i {
+  font-weight: bold;
+}
+
+/* format the display of the link name after the user adding one */
+.task_wrap .link {
+  padding: 10px 10px;
+  border-bottom: 1.5px solid #c1c8e4;
+}
+
+.task_wrap .link a {
+  margin-left: 30px;
+  color: #5ab9ea;
+}
+
+/* the edit ellipse */
+.editWrap {
+  float: right;
+  margin-right: 10px;
+  color: #5ab9ea;
+  position: relative;
+}
+
+/* the popup box for user to add or delete the link, I display it on the right of the ellipse to aviod keeping out another ellipes below */
+.editWrap .drop_Down {
+  width: 80px;
+  height: 50px;
+  background-color: white;
+  border-radius: 6px;
+  position: absolute;
+  top: -15px;
+  left: 25px;
+  z-index: 10;
+  list-style: none;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.editWrap .drop_Down li {
+  height: 50%;
+  text-align: center;
+  color: #4bb5ea;
+  font-size: 8px;
+  line-height: 25px;
+}
+
+.editWrap .drop_Down li span:hover {
+  cursor: pointer;
+}
+
+.editWrap .drop_Down li:first-child {
+  border-bottom: 1.5px solid #5ab9ea;
+}
+
+/* the new category button */
+.task_wrap .new_Category {
+  width: 15%;
+  height: 40px;
+  background-color: #5ab9ea;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+/* "plus" icon */
+.task_wrap .new_Category i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* Add Link title */
+.add_link_wrap .title {
+  width: 100%;
+  margin-bottom: 80px;
+  text-align: center;
+  position: relative;
+}
+
+/* the "back" icon */
+.add_link_wrap .title .back {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5680e9;
+  position: absolute;
+  left: 0px;
+}
+
+/* the big light grey background of the link information form */
+.add_link_wrap .bgc {
+  background-color: #f2f2f2;
+  padding: 30px;
+  height: 530px;
+  border-radius: 20px;
+}
+
+/* from here, format the input form of the link information */
+.add_link_wrap .form_Width {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* give the color to labels */
+.add_link_wrap form {
+  color: #84ceeb;
+}
+
+/* define attributes for inputs */
+.add_link_wrap form input {
+  width: 100%;
+  padding: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* format the initial name and last name input */
+.add_link_wrap #iname {
+  width: 46%;
+  display: inline-block;
+}
+
+.add_link_wrap #lname {
+  float: right;
+  width: 46%;
+}
+
+.add_link_wrap ::placeholder {
+  color: #ccc;
+}
+
+/* same as the forth line, give the 46% width for both inputs in the same line */
+.add_link_wrap #year {
+  width: 46%;
+}
+
+.add_link_wrap label[for="webname"] {
+  margin-left: 374px;
+}
+
+.add_link_wrap #webname {
+  width: 46%;
+  float: right;
+}
+
+.add_link_wrap button {
+  margin-top: 10px;
+}
+
+/* format the generate reference and save buttons together */
+.add_link_wrap #reference, .add_link_wrap #linksave {
+  background-color: #5680e9;
+  color: white;
+  width: 120px;
+  height: 45px;
+  border-radius: 20px;
+  border: 0px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* generate reference button on the left */
+.add_link_wrap #reference{
+  float: left;
+  margin-left: 80px;
+}
+
+/* save button on the right */
+.add_link_wrap #linksave {
+  float: right;
+  margin-right: 80px;
 }
