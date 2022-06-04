@@ -1,14 +1,14 @@
 # Iteration based on feedback and further self-reflection
 
-1. **The music player:** 
+1. ### **The music player:** 
 
    *Before:*
 
    ![image-20220604124134259](.\README.assets\image-20220604124134259.png)
 
-   Feedback: When my participants looking at the old version of the music player, they said that they have no idea about how long had the current song played as well as its progress. On the other hand, two participants mentioned that it looks a little bit disharmonious on the bar. 
+   **Feedback:** When two of my testing participants viewed the old version of the music player, they expressed confusion about how long the current song had been playing and how much time remained. On the other hand, two participants mentioned that it it looks a little bit disharmonious on the bar.
 
-   Self-reflection: The first thing I need to solved is to figure out a way adding a progress bar inside the music player. From the perspective of the layout, I felt the buttons occupy too many spaces, which makes the song information less visible to users. And the white background leaves too much contrast to eyes. I think that's the reason why user felt it disharmonious.
+   **Self-reflection:** The first problem I need to overcome is figuring out how to add a progress indicator inside the music player. In terms of layout, I believe the buttons take up too much space, making the song information less apparent to users. Furthermore, the white backdrop creates too much contrast for the eyes. I thought that's why users found it disharmonious.
 
    *After:*
 
@@ -16,15 +16,17 @@
 
    
 
-2. **The Kanban board card**: This is my initial design of the Kanban board card. User can directly click on the corresponding input to fill in the task information.  
+2. ### **The Kanban board card**: 
+
+   This is my first attempt at designing a Kanban board card. The user may directly fill in the task information by clicking on the corresponding input.
 
    *Before:* 
 
    ![image-20220604104511399](.\README.assets\image-20220604104511399.png)
 
-   Feedback: According to the feedback from the user testing, 3/6 participants felt this interaction mode was weird as the card almost remained unchanged before and after they finish filling the information and save it. 
+   **Feedback:** According to user testing feedback, 3/6 participants thought this interaction mode was strange because the card almost stayed unchanged before and after they finished filling out the information and saved it.
 
-   Self-reflection: I agreed with them. I thought what I did inappropriately was I put too many functions on a single card (user input, delete, edit, save and display), which increases the user's mental mode burden. I think I should divide the process into two parts: a form allows the user to input information first and then, display the information on a "card" and allow the user to edit and delete the card.
+   **Self-reflection:** I resonated with them. What I considered I did wrong was including too many functions on a single card (user input, delete, edit, save, and display), which increased the user's mental mode burden. I believe the process could be divided into two parts: a form that allows the user to submit information first, followed by displaying the information on a "card" and allowing the user to modify and remove the card.
 
    
 
@@ -38,19 +40,19 @@
 
    ![image-20220604104930333](.\README.assets\image-20220604104930333.png)
 
-   ​                                                                The task information will still be there when user wants to edit the card.
+   ​                                                                    The task information will still be there when the user edits the card.
 
    ![image-20220604123459433](.\README.assets\image-20220604123459433.png)
 
-3. **Enter the corresponding task page by double clicking on the card**
+3. ### **Enter the corresponding task page by double clicking on the card**
 
    *Before:*
 
    ![image-20220604135149523](.\README.assets\image-20220604135149523.png)
 
-   Feedback: Most of my participants didn't aware that they could enter a specific page by doubling clicking on the card. Because there are no any clues telling them to do that.
+   **Feedback:** The majority of my participants were unaware that they may access a specific page by simply twice clicking on the card, . Because there are no hints directing them to do so.
 
-   Self-reflection:  My initial solution was setting the cursor to pointer when the user hover on the card to tell them that it's clickable. However, it leads to another issue: when the user hovers on the ellipse, the cursor remained unchanged. So the user may don't know it's clickable in first time. On the other hand, using the pointer is not intuitive to tell the user to double click. It's more like saying clicking once. Finally, I changed the background color deeper when the user hover on the card, which could more likely to trigger the double clicking action.
+   **Self-reflection:** My initial solution was to set the cursor to pointer when the user hovered over the card to signify that it was clickable. However, this raises another issue: when the user hovers over the ellipse, the cursor remains the same. As a result, the user may be unaware that the ellipse is clickable immediately. On the other hand, using the cursor to advise the user to double click is not intuitive. It's more tending to say "click once." Finally, I altered the background color darker when the user hovered over the card, increasing the likelihood of the double clicking event.
 
    *After:*
 
@@ -58,47 +60,47 @@
 
    
 
-4. **The "subtask circle"** 
+4. ### **The "subtask circle"** 
 
    *Before:*
 
-<img src=".\README.assets\image-20220604104138483.png" alt="image-20220604104138483" style="zoom:150%;" />
+<img src=".\README.assets\image-20220604104138483.png" alt="image-20220604104138483" style="zoom:;" />
 
-Feedback: Three participants thought the subtask name is less conspicuous and they don't want to see how many steps they've been through. Because as the step number increase, they will feel the task is really complicated and want to give up.
+**Feedback:** Three respondents claimed the subtask name was less noticeable. Additionally, they didn't want to know how many steps they'd taken when doing the certain task. Because as the number of steps increases, they will perceive the work to be extremely complicated and will want to end it as soon as possible.
 
-Self-reflection: The step number won't be displayed now. And I think the reason why the user feel the subtask name is not conspicuous is its low font-weight, and the "Complete" button is too big. On the other hand, a horizontal line has been added under the title to help the user distinguish the section.
+**Self-reflection:** The step number will no longer be shown. And I believe the user feels the subtask name is not apparent because of the light font-weight, and the "Complete" button is too large. Except modifying them, a horizontal line has been placed below the "current step" to assist the user in distinguishing the part.
 
 ​       *After:*
 
-<img src=".\README.assets\image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 67%;" />
+<img src=".\README.assets\image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 50%;" />
 
-5. **The timer:**
+5. ### **The timer:**
 
    *Before:*
 
-   ![image-20220604151058630](.\README.assets\image-20220604151058630.png)
+   <img src=".\README.assets\image-20220604151058630.png" alt="image-20220604151058630" style="zoom: 67%;" />
 
-   Feedback: Five participants said that they won't click the restart button when they are studying. 
+   **Feedback:** Five participants stated that they will not use the restart button while studying.
 
-   Self-reflection:  I think their words make sense. On the other hand, there also no way for the user to turn to the next pomodoro session if they want to. So I replace the restart button with the skip button.
+   **Self-reflection:**  Their words make sense to me. On the other side, there is no means for the user to skip to the next pomodoro session if they want. As a result, I've replaced the restart button with the skip button.
 
    
 
    After: 
 
-   ![image-20220604151118479](.\README.assets\image-20220604151118479.png)
+   <img src=".\README.assets\image-20220604151118479.png" alt="image-20220604151118479" style="zoom: 67%;" />
 
 
 
-6. **Reading list ellipse**
+6. ### **Reading list ellipse**
 
 ​	*Before:*
 
-<img src=".\README.assets\image-20220604104110701.png" alt="image-20220604104110701"/>
+<img src=".\README.assets\image-20220604104110701.png" alt="image-20220604104110701" style="zoom:150%;" />
 
-​	Feedback: The pop up menu will hinder the ellipse in the next line.
+​	**Feedback:** The ellipse in the next line will be hindered by the pop-up menu.
 
-​	Self-reflection: The position of the pop up menu could be moved to the right of the ellipse to solve the issue simply.
+​	**Self-reflection:** To address this problem, I relocate the pop-up menu to the right of the ellipse.
 
 ​    After:* 
 
@@ -106,7 +108,7 @@ Self-reflection: The step number won't be displayed now. And I think the reason 
 
 
 
-7. **Reading list input form**
+7. ### **Reading list input form**
 
    *Before:*
 
@@ -114,9 +116,9 @@ Self-reflection: The step number won't be displayed now. And I think the reason 
 
    
 
-   feedback: Three participants said the function of the input form is fine. However, this input form together with two buttons looks a little bit seprerate from each other.
+   **feedback:** Three participants agreed that the input form's function is satisfactory. However, each input, together with two buttons, appears to be separated from one another.
 
-   Self-reflection: I think this is because I didn't add a border or background to the input form area to tell the user that they are an entity. As a result, a light grey background has been added.
+   **Self-reflection:** I believe this is due to I did not add a border or backdrop to the input form area to show they are an entity. As a result, there is now a light gray background.
 
    
 
@@ -126,4 +128,16 @@ Self-reflection: The step number won't be displayed now. And I think the reason 
 
    
 
-8. Fix the Improve the user experience, such as add the white area when the user hovering on the menu items and the mouse won’t become pointer when the user hover on the icons on the card, as they are unclickable.
+8. ### **The rest of things are improving the user experience.**
+
+   1. Because these icons on the card are unclickable, the mouse will not change to the pointer when the user hovers over them.
+
+      ![image-20220605003235364](README.assets/image-20220605003235364.png)
+
+   2. Many users clicked the "Complete" button first when they looked at the task page, and got no response. So I created an alert popup to inform users that they should first add steps.
+
+<img src="README.assets/image-20220605003152976.png" alt="image-20220605003152976" style="zoom: 67%;" />
+
+3. Similarly, when a promodoro session ends, another alert box will notify the user.
+
+<img src="README.assets/image-20220605003605579.png" alt="image-20220605003605579" style="zoom: 67%;" />

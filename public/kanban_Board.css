@@ -25,7 +25,6 @@ h3 {
 .card_Column {
   flex-shrink: 0;
   width: 310px;
-  /* min-width: 310px !important; */
   display: inline-block;
   margin-right: 100px;
   margin-bottom: 50px;
@@ -73,7 +72,7 @@ h3 {
   background-color: #5ab9ea;
   border-radius: 20px;
   padding: 8% 4%;
-  /* margin-bottom: 20px; */
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   color: white;
@@ -142,6 +141,7 @@ h3 {
 .info_Second_Row i {
   font-size: 12px;
   margin-right: 5px;
+  cursor:default !important;
 }
 
 /* the input form */

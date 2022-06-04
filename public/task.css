@@ -490,21 +490,9 @@
   margin-right: 80px;
 }
 
+/* mobile edition */
 @media screen and (max-width: 720px) {
-  .time_setting {
-    left:-330px;
-    top: 410px;
-    padding: 25px 5px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .task_wrap .title .subtask_Icon {
-    left: 250px;
-  }
-}
-
-@media screen and (max-width: 720px) {
+  /* position the big circle and the timer vertically */
   .task_wrap .combination {
     flex-direction: column;
     justify-content: center;
@@ -514,54 +502,38 @@
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
   }
-}
-
-@media screen and (max-width: 720px) {
   .task_wrap .timer {
     width: 340px;
     height: 350px;
     margin-left: 50px;
   }
-}
-
-@media screen and (max-width: 720px) {
   .task_wrap .timer_Buttons {
     width: 350px;
   }
-}
-
-@media screen and (max-width: 720px) {
   .task_wrap .timer_Middle i {
-    right: 10px;
+    right: 5px;
   }
-}
-
-@media screen and (max-width: 720px) {
+  .time_setting {
+    left:-330px;
+    top: 400px;
+    padding: 25px 5px;
+  }
   .add_link_wrap .fixed_Width {
     padding: 20px;
   }
-}
-@media screen and (max-width: 720px) {
   .add_link_wrap .form_Width {
     width: 100%;
   }
-}
-
-@media screen and (max-width: 720px) {
   .add_link_wrap label[for="webname"] {
-    margin-left: 130px;
+    margin-left: 180px;
   }
-}
-
-@media screen and (max-width: 720px) {
   .add_link_wrap #reference {
     margin-left: 30px;
   }
-}
-
-@media screen and (max-width: 720px) {
   .add_link_wrap #linksave {
     margin-right: 30px;
   }
+  .task_wrap .new_Category{
+    width:30%;
+  }
 }
-

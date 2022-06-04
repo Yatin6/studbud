@@ -55,34 +55,27 @@
 
 /* mobile edition */
 @media screen and (max-width: 720px) {
+  /* display the middle items vertically */
   .middle {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: -40px;
-
   }
-
   .middle img {
     margin:0 auto;
     margin-top: 50px;
     width: 100%;
   }
-}
-
-@media screen and (max-width: 720px) {
   #index_Left button {
-    margin-top: 30px;
+    margin-top: 50px;
   }
-}
-
-@media screen and (max-width: 720px) {
+  /* display three questions vertically */
   .bottom {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
   }
-
   .bottom span {
     padding-top: 10px;
   }

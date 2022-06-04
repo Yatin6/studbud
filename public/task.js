@@ -344,7 +344,7 @@ document
     console.log("stepCard click")
 
     if (stepList.length === 0) {
-      alert("please add step!")
+      alert("Please add steps first! (click on the icon next to the task name)")
       stepCard.querySelector(".step_details").innerHTML = "Add subtasks first"
       return
     }
