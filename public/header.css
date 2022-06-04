@@ -22,7 +22,7 @@
   i:hover,
   a:hover,
   button:hover {
-    cursor: pointer;
+    cursor: pointer !important;
   }
   
   /* set the header */
@@ -184,4 +184,26 @@
     margin: 0 auto;
     padding: 0 5px;
     position: relative;
+  }
+
+  @media screen and (max-width: 720px) {
+    .fixed_Width {
+      position: relative;
+      width: 100%;
+      padding: 0 0 0 20px;
+    }
+  
+    .menu ul {
+      display: flex;
+      margin-left: -230px;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .musicplayer {
+      position: absolute;
+      top: 55px;
+      left: calc(50%-150px);
+      min-width: 300px;
+    }
   }

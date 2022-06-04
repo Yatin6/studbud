@@ -1,10 +1,7 @@
-var taskList = JSON.parse(localStorage.getItem("taskList")) || [] // 卡片数据
-// let stepList = JSON.parse(localStorage.getItem("stepList")) || [] // 步骤数据
-// let linkList = JSON.parse(localStorage.getItem("linkList")) || [] // 链接数据
-// let linkId = JSON.parse(localStorage.getItem("linkId")) || 0 // 链接id数据
+var taskList = JSON.parse(localStorage.getItem("taskList")) || [] // card data
 
 let intervalTimes = 1
-// 获取卡片数据
+// obtain the card according the index number 
 let params = location.search
   .slice(1, location.search.length)
   .split("&")
@@ -21,8 +18,8 @@ for (let i = 0; i < taskList.length; i++) {
 }
 console.log(params[0][1], taskData)
 
-let stepList = taskData.datas.stepList // 步骤数据
-let linkList = taskData.datas.linkList // 链接数据
+let stepList = taskData.datas.stepList // subtask steps data
+let linkList = taskData.datas.linkList // reading list link information data
 
 let linkIsNew = true
 let linkEditIndex = -1
@@ -37,72 +34,65 @@ if (linkList.length === 0) {
   // localStorage.setItem("linkList", JSON.stringify(linkList))
   localStorage.setItem("taskList", JSON.stringify(taskList))
 }
-// let linkNum = JSON.parse(localStorage.getItem("linkNum")) || [] // 链接index数据
 initLinkWrap()
 
 let addSubtasksButton = document.querySelector(".add_Subtasks_Button")
 let addSubtasks = document.querySelector(".add_Subtasks")
-
 let stepCard = document.querySelector(".subtask_Circle")
-
 let referenceList = document.querySelectorAll(".reference_List")
 
 console.log("task begin", taskList)
 
-/*****
- * 卡片数据获取与初始化
+/*
+ * Card data acquisition and initialisation
  * begin
  */
 
-// 更改task标题
+// Change the title of the task page
 document.querySelector(".title").querySelector("h2").innerHTML = taskData.name
 
-// 设置时间
-// let duration = Number(taskData.time.hours) * 60 + Number(taskData.time.minutes)
+// Set time
 duration = 25 * 60
 console.log(duration)
 
 let timeCountDown = document.querySelector(".countdown")
-// 时间：总分钟数 => 时：分
+// Time: convert the Total minutes into minutes: seconds
 function formateTime(times) {
-  let hours = Math.floor(times / 60)
-  let minutes = Number(times % 60)
+  let minutes = Math.floor(times / 60)
+  let seconds = Number(times % 60)
   return {
-    hours,
     minutes,
+    seconds,
   }
 }
 
-// 时间渲染
+// Time rendering
 function changeTime(arg) {
   let temp = formateTime(arg)
   console.log(temp)
-  timeCountDown.innerHTML = `${String(temp.hours).length < 2 ? "0" + temp.hours : temp.hours}:${
-    String(temp.minutes).length < 2 ? "0" + temp.minutes : temp.minutes
+  timeCountDown.innerHTML = `${String(temp.minutes).length < 2 ? "0" + temp.minutes : temp.minutes}:${
+    String(temp.seconds).length < 2 ? "0" + temp.seconds : temp.seconds
   }`
 }
 changeTime(duration)
 
-/*****
- * 卡片数据获取与初始化
+/*
+ * Card data acquisition and initialisation
  * end
  */
 
-/*****
- * 计时器
+/*
+ * Timer
  * begin
  */
-
 let time = null
 // let timePause = true
 
 document.querySelector("#start_time").addEventListener("click", function () {
   if (duration === 0) {
-    // alert("time out")
-    // clearInterval(time)
-    // time = null
     return
   }
+  // When the timer starts, it counts down and then automatically moves on to the next pomodoro stage when run out of time.
   if (!time) {
     document.querySelector("#start_time").classList.remove("icon-bofang")
     document.querySelector("#start_time").classList.add("icon-zanting")
@@ -125,6 +115,7 @@ document.querySelector("#start_time").addEventListener("click", function () {
   }
 })
 
+// the event after clicking on the "skip" icon 
 document.querySelector("#reset_time").addEventListener("click", function () {
   intervalTimes++
   if (intervalTimes % (settingTime.interval * 2 + 2) === 0) {
@@ -139,7 +130,7 @@ document.querySelector("#reset_time").addEventListener("click", function () {
   }
 })
 
-// study/short break/long break 点击事件
+// study/short break/long break click events
 document
   .querySelector(".timer_Buttons")
   .querySelectorAll("button")
@@ -163,10 +154,50 @@ document
     }
   })
 
-// link edit/delete
+  // Setting events
+let settingTime = {
+  study: 25,
+  short_break: 5,
+  long_break: 15,
+  interval: 4,
+}
+
+// study = 25 min
+// short break = 5 min
+// long break = 30 min
+// interval = 4
+let setting = document.querySelector(".time_setting")
+document.querySelector(".timer_Middle").querySelector("i").onclick = function () {
+  setting.style.display = "block"
+  setting.querySelector("#study").value = settingTime.study
+  setting.querySelector("#short_break").value = settingTime.short_break
+  setting.querySelector("#long_break").value = settingTime.long_break
+  setting.querySelector("#interval").value = settingTime.interval
+}
+
+setting.querySelector("#cancel").onclick = function () {
+  setting.style.display = "none"
+}
+setting.querySelector("#save").onclick = function () {
+  settingTime.study = Number(setting.querySelector("#study").value)
+  settingTime.short_break = Number(setting.querySelector("#short_break").value)
+  settingTime.long_break = Number(setting.querySelector("#long_break").value)
+  settingTime.interval = Number(setting.querySelector("#interval").value)
+  console.log(settingTime.study, settingTime.short_break, settingTime.long_break, settingTime.interval)
+  setting.style.display = "none"
+  intervalTimes = 1
+  document.querySelector("button[data-time='study']").click()
+  document.querySelector("#start_time").click()
+}
+/*
+ * timer
+ * end
+ */
+
+// step edit/delete
 function initStepEditWrap() {
   document.querySelectorAll(".add_Subtasks > .task_step").forEach((item, index) => {
-    // delete step 事件
+    // delete step event
     item.querySelector("#task_Delete").parentNode.onclick = function (e) {
       console.log(e.target.closest(".task_step"), index)
       stepList.splice(index, 1)
@@ -177,7 +208,7 @@ function initStepEditWrap() {
       initStepEditWrap()
     }
 
-    // edit step 事件
+    // edit step event
     item.querySelector("#task_Edit").parentNode.onclick = function (e) {
       let newSubtask = document.createElement("li")
       newSubtask.classList.add("task_step")
@@ -235,19 +266,18 @@ function initStepEditWrap() {
   })
 }
 
-/*****
- * 计时器
- * end
- */
 
-// 步骤添加框的显示与隐藏
+// Showing and hiding the add subtask box
 document.querySelector(".subtask_Icon").addEventListener("click", function (e) {
   // e.preventDefault()
   addSubtasks.style.display = addSubtasks.style.display === "none" ? "block" : "none"
 })
 
-
-// 步骤初始化
+/*
+ * step initializagtion
+ * begin
+ */ 
+// render the step data stored in the local storage on the page
 function initStep() {
   if (stepList.length === 0) {
     return
@@ -295,11 +325,8 @@ function initStep() {
 initStep()
 initStepEditWrap()
 
-/*
- * step初始化
- * begin
- */
 
+// diplay the subtask by order on the big circle
 function initStepCard() {
   if (stepList.length === 0) {
     stepCard.querySelector(".step_details").innerHTML = "Add subtasks first"
@@ -309,7 +336,7 @@ function initStepCard() {
 }
 initStepCard()
 
-// complete step完成事件
+// complete button click event
 document
   .querySelector(".subtask_Circle")
   .querySelector("button")
@@ -328,11 +355,11 @@ document
   })
 
 /*
- * step初始化
+ * step initialization
  * end
  */
 
-// 添加步骤事件
+// Adding step event
 let subtasksArr = []
 addSubtasksButton.addEventListener("click", function () {
   let newSubtask = document.createElement("li")
@@ -380,11 +407,11 @@ addSubtasksButton.addEventListener("click", function () {
   addSubtasks.insertBefore(newSubtask, addSubtasksButton)
 })
 
-/****************** 非常长的分割线 ********************/
-/****************************** */
+/****************** reading list page code below ********************/
 
-/*****
- * add Link 切换
+
+/*
+ * add Link switch (display the add link input form page when the user click on "Add Link" button and hide the task page)
  * begin
  */
 
@@ -397,8 +424,9 @@ function insertAfter(newNode, curNode) {
 
 let referenceListTarget = null
 
-// link初始化渲染
+// initialize the reading list events(delete the category and add a new link)
 function initReferenceList() {
+  // delete the whole reading list category when clicking on the cross icon and update the data in local storage
   referenceList.forEach((item) => {
     item
       .querySelector(".ref_Top")
@@ -416,6 +444,7 @@ function initReferenceList() {
         item.remove()
       })
 
+    // switch the task page and add link form visibility between none and block
     item
       .querySelector(".add_Link")
       .querySelector("a")
@@ -435,16 +464,38 @@ function initReferenceList() {
 }
 initReferenceList()
 
-/*****
- * add Link 切换
+/*
+ * add Link switch
  * end
  */
 
-/******
+
+/*
  * add_link
  * begin
  */
 
+addLinkWrap.querySelector('#reference').addEventListener("click", function (e) {
+  e.preventDefault()
+  if (form.querySelector("#note").value.trim() === "" || form.querySelector("#URL").value.trim() === "") {
+    return
+  }
+  let obj = {
+    note: form.querySelector("#note").value.trim(),
+    url: form.querySelector("#URL").value.trim(),
+    title: form.querySelector("#title").value.trim(),
+    author: {
+      iname: form.querySelector("#iname").value.trim(),
+      lname: form.querySelector("#lname").value.trim(),
+    },
+    year: form.querySelector("#year").value.trim(),
+    web: form.querySelector("#webname").value.trim(),
+  }
+  console.log(obj)
+  // alert(obj)
+})
+
+// Add a new link to the task page after the user presses the save button and save it to the local storage
 addLinkWrap.querySelector("#linksave").addEventListener("click", function (e) {
   e.preventDefault()
   // console.log(document.querySelector("form"))
@@ -465,6 +516,7 @@ addLinkWrap.querySelector("#linksave").addEventListener("click", function (e) {
   }
   console.log(obj)
   console.log(Number(referenceListTarget.querySelector(".link_num").innerHTML), linkList)
+  // add the new link to the category it belongs to
   for (let i = 0; i < linkList.length; i++) {
     if (linkList[i].num === Number(referenceListTarget.querySelector(".link_num").innerHTML)) {
       if (linkIsNew) {
@@ -476,16 +528,16 @@ addLinkWrap.querySelector("#linksave").addEventListener("click", function (e) {
       break
     }
   }
+  // update the local storage data
   localStorage.setItem("taskList", JSON.stringify(taskList))
+  // render the new list data
   let newNode = document.createElement("div")
-  // newNode.style.width = "100%"
   newNode.classList.add("link")
   let newLink = document.createElement("a")
   newLink.href = "http://" + obj.url
   newLink.target = "_blank"
   newLink.innerHTML = obj.note
   console.log(newLink.attributes["href"], newLink)
-  // newLink.innerHTML =
   let newEdit = document.querySelector(".editWrap").cloneNode(true)
   newEdit.querySelector("#ellipse").onclick = function (e) {
     let editTarget = e.target.closest(".link")
@@ -513,11 +565,11 @@ function addLink() {
  * end
  */
 
+
 /*
- * 新增 category
+ * add a new link category
  * begin
  */
-
 function newLinkWrap() {
   document.querySelector(".new_Category").addEventListener("click", function () {
     let newRefLinkWrap = document.querySelector(".copy").cloneNode(true)
@@ -529,9 +581,10 @@ function newLinkWrap() {
       title: newRefLinkWrap.querySelector("h3").innerHTML,
       data: [],
     })
+    // update the local storage link category data
     localStorage.setItem("taskList", JSON.stringify(taskList))
     cateRowTitle(newRefLinkWrap.querySelector(".ref_Top"))
-
+    // open all the links under the category when click on the "open all" button
     newRefLinkWrap.querySelector(".ref_Top").querySelector("a").onclick = function () {
       console.log("open all")
       newRefLinkWrap.querySelectorAll(".link").forEach((item3) => {
@@ -539,6 +592,7 @@ function newLinkWrap() {
         console.log(item3.querySelector("a").href)
       })
     }
+    // initialize the events for the new link category has just been generated 
     newRefLinkWrap
       .querySelector(".ref_Top")
       .querySelector("i")
@@ -575,12 +629,12 @@ function newLinkWrap() {
 }
 newLinkWrap()
 
-/********
- * 新增 category
+/*
+ * add a new link category
  * end
  */
 
-// 初始化链接展示，将localStorage中的数据渲染至前端（本文件最前方调用，保证先渲染，后面代码便可对其添加事件）
+// get the data from the local storage and render the reading list section on the task page
 function initLinkWrap() {
   linkList.forEach((item) => {
     let newRefLinkWrap = document.querySelector(".copy").cloneNode(true)
@@ -619,7 +673,7 @@ function initLinkWrap() {
 // link edit/delete
 function initEditWrap() {
   document.querySelectorAll(".reference_List").forEach((item) => {
-    // delete link 事件
+    // delete link event(the delete button in the ellipse)
     item.querySelectorAll("#task_Delete").forEach((item2, index) => {
       item2.parentNode.onclick = function (e) {
         console.log(e.target.closest(".link"), e.target.closest(".reference_List"), index)
@@ -636,7 +690,7 @@ function initEditWrap() {
       }
     })
 
-    // edit link 事件
+    // edit link event(in the ellipse)
     item.querySelectorAll("#task_Edit").forEach((item2, index) => {
       item2.parentNode.onclick = function (e) {
         // e.preventDefault()
@@ -646,7 +700,7 @@ function initEditWrap() {
         form.reset()
         let taskWrap = document.querySelector("#task_content")
         console.log(taskWrap.style.display, addLinkWrap.style.display)
-        // let flag = 0
+        // swtich page content
         taskWrap.style.display = taskWrap.style.display === "none" ? "block" : "none"
         addLinkWrap.style.display = addLinkWrap.style.display === "none" ? "block" : "none"
 
@@ -663,6 +717,7 @@ function initEditWrap() {
             break
           }
         }
+        // display the old data in the form
         console.log(e.target.closest(".reference_List"), datas)
         form.querySelector("#note").value = datas.note
         form.querySelector("#URL").value = datas.url
@@ -671,7 +726,6 @@ function initEditWrap() {
         form.querySelector("#webname").value = datas.web
         form.querySelector("#iname").value = datas.author.iname
         form.querySelector("#lname").value = datas.author.lname
-
         return
       }
     })
@@ -679,7 +733,7 @@ function initEditWrap() {
 }
 initEditWrap()
 
-// 全局点击后隐藏卡片edit/delete操作
+// Hide the popup menu after global click
 document.addEventListener("click", function (ev) {
   ev = ev || event
   var target = ev.target || ev.srcElement
@@ -694,7 +748,7 @@ document.addEventListener("click", function (ev) {
   }
 })
 
-// category标题修改后，将对应localStorage标题数据进行更改
+// When the category title is changed, the corresponding localStorage title data will be changed
 document.querySelectorAll(".ref_Top").forEach((item) => {
   cateRowTitle(item)
 })
@@ -712,40 +766,4 @@ function cateRowTitle(item) {
     // localStorage.setItem("linkList", JSON.stringify(linkList))
     localStorage.setItem("taskList", JSON.stringify(taskList))
   })
-}
-
-// 设置事件
-let settingTime = {
-  study: 25,
-  short_break: 5,
-  long_break: 15,
-  interval: 4,
-}
-
-// let study = 25
-// let short_break = 5
-// let long_break = 30
-// let interval = 4
-let setting = document.querySelector(".time_setting")
-document.querySelector(".timer_Middle").querySelector("i").onclick = function () {
-  setting.style.display = "block"
-  setting.querySelector("#study").value = settingTime.study
-  setting.querySelector("#short_break").value = settingTime.short_break
-  setting.querySelector("#long_break").value = settingTime.long_break
-  setting.querySelector("#interval").value = settingTime.interval
-}
-
-setting.querySelector("#cancel").onclick = function () {
-  setting.style.display = "none"
-}
-setting.querySelector("#save").onclick = function () {
-  settingTime.study = Number(setting.querySelector("#study").value)
-  settingTime.short_break = Number(setting.querySelector("#short_break").value)
-  settingTime.long_break = Number(setting.querySelector("#long_break").value)
-  settingTime.interval = Number(setting.querySelector("#interval").value)
-  console.log(settingTime.study, settingTime.short_break, settingTime.long_break, settingTime.interval)
-  setting.style.display = "none"
-  intervalTimes = 1
-  document.querySelector("button[data-time='study']").click()
-  document.querySelector("#start_time").click()
 }

@@ -7,8 +7,8 @@ let cardColumnCopy = document.querySelector(".copy")
 let noWrap = document.querySelector("#no_Wrap")
 let addCard = document.querySelector(".conceal_Add_copy")
 var taskList = JSON.parse(localStorage.getItem("taskList")) || [] // Card information data
-let titleList = JSON.parse(localStorage.getItem("titles")) || [] // 标题数据
-let rows = [] // 卡片映射数据 => 已处理后的数据
+let titleList = JSON.parse(localStorage.getItem("titles")) || [] // title of each column
+let rows = [] // a 2D array, the first dimension use to store the column index, and the second dimension stores the card information under that column
 
 // seperae the data from the date input
 function getDateValue(elements) {
@@ -17,22 +17,24 @@ function getDateValue(elements) {
 let dropDownFlag = "none"
 let dropDownTarget = null
 
-/*page initialize
- * 本块负责对页面加载时从localStorage中获取卡片储存数据并进行渲染，达到页面刷新卡片数据不丢失的效果
+/* page initialize
+ * This block is responsible for fetching card storage data from localStorage on page load and rendering 
+ *  it to achieve the effect that card data will not be lost when the page is refreshed
  * begin
  * */
-// 初始化卡片唯一标识id
+
+// Initialize the card unique identification using a number
 let indexNum = localStorage.getItem("index") || 0
 localStorage.setItem("index", indexNum)
 let cardIndex = Number(localStorage.getItem("index"))
 
-
 initRow()
-// 初始化每一列的num
+// Initialise the num of each column unique identification using a number
 localStorage.setItem("card", localStorage.getItem("card") || 0)
 let rowIndex = Number(localStorage.getItem("card"))
 
-// 全局函数：添加卡片，同时将数据存储至localStorage
+// Global functions: Once the user finishes filling the form by clicking the "tick" sign, 
+// the card information data will be saved in localStorage
 function addTask(id, name, year, month, day, hours, minutes, priority, status, rowNum) {
   let newTask = {
     id: id,
@@ -57,11 +59,10 @@ function addTask(id, name, year, month, day, hours, minutes, priority, status, r
   taskList = rowsToList(rows)
   taskList.push(newTask)
   rows.find((item) => item.rowNum === Number(rowNum)).data.push(newTask)
-  // console.log(rowsToList(rows))
   localStorage.setItem("taskList", JSON.stringify(taskList))
 }
 
-// 卡片数据更改，同时对localStorage数据进行修改
+// When the user modify the information in the card, the data stored in the local storage will be changed correspondingly
 function modifyTask(id, name, year, month, day, hours, minutes, priority, status, rowNum) {
   let newTask = {
     id: id,
@@ -91,14 +92,12 @@ function modifyTask(id, name, year, month, day, hours, minutes, priority, status
   localStorage.setItem("taskList", JSON.stringify(taskList))
 }
 
-// 初始化函数 => 将得到的数据进行卡片渲染，生成前端卡片（一列中的数据）
+// Initialization function => card rendering from the obtained data in local storage to 
+// generate a front-end card (all data in a column)
 function initCards(taskDatas, rowIndex) {
-
-
   if (!taskDatas || taskDatas.length === 0) {
     return
   }
-
   var newColumn = cardColumnCopy.cloneNode(true)
 
   newColumn.querySelector(".card_num").innerHTML = rowIndex
@@ -110,7 +109,7 @@ function initCards(taskDatas, rowIndex) {
   newColumn.style.display = "block"
   noWrap.insertBefore(newColumn, newBoard)
 
-  // 初始化卡片
+  // generate a new card(including form and the card, the same logic of adding the task mentioned previously)
   let concealCard = newColumn.querySelector(".conceal_Card")
   let temp = taskDatas[0]
   newColumn.querySelector(".index_num").innerHTML = temp.id
@@ -134,7 +133,7 @@ function initCards(taskDatas, rowIndex) {
   }
   newColumn.querySelector(".card_Form").style.display = "none"
   newColumn.querySelector(".conceal_Card").style.display = "block"
-  // 初始化表单
+  // Initialising the input form
   let newForm = newColumn.querySelector(".card_Form")
   // console.log(newForm)
   newForm.querySelector("#Task").value = temp.name
@@ -150,7 +149,7 @@ function initCards(taskDatas, rowIndex) {
     let cloneCardDiv = singleEle.cloneNode(true)
     newColumn.appendChild(cloneCardDiv)
 
-    // 初始化卡片
+    // Initialising the card
     let concealCard = cloneCardDiv.querySelector(".conceal_Card")
     let temp = taskDatas[i]
     cloneCardDiv.querySelector(".index_num").innerHTML = temp.id
@@ -175,7 +174,7 @@ function initCards(taskDatas, rowIndex) {
     cloneCardDiv.querySelector(".card_Form").style.display = "none"
     cloneCardDiv.querySelector(".conceal_Card").style.display = "block"
 
-    // 初始化表单
+    // Initialising the input form
     let newForm = cloneCardDiv.querySelector(".card_Form")
     // console.log(newForm)
     newForm.querySelector("#Task").value = temp.name
@@ -194,8 +193,10 @@ function initCards(taskDatas, rowIndex) {
 
 // initCards()
 
-// 初始化每一列数据：初始化逻辑为对每一列执行一个initCard函数，调用一次initCard函数就生成一列的卡片，
-// 所以后面会根据列的数量循环调用initCard函数
+// Converts the one-dimensional array taskList in local storage into a two-dimensional array
+// rows for easy handling of data in each column。Then, initialize each column of data: the initialization 
+// logic is to execute an initcards function for each column cyclically according to the number of columns, 
+// each time will generate one column of cards.
 function initRow() {
   let rowDatas = JSON.parse(localStorage.getItem("taskList"))
   if (!rowDatas || rowDatas.length === 0) {
@@ -220,7 +221,7 @@ function initRow() {
       }
     }
   }
-  console.log(rowTemp, "rows", mapTemp)
+  console.log(rowTemp, "rows", mapTemp, taskList)
   let titleTemp = []
   titleList.forEach((item) => {
     if (rowTemp.indexOf(Number(item.rowNum)) !== -1) {
@@ -239,9 +240,12 @@ function initRow() {
   })
 }
 
-/*page initialize end */
+/*page initialize 
+ *end 
+ */
 
-// 全局函数，rows为卡片与列的映射关系（二维数组），需将rows转化为一维数组形式才可存储至localStorage
+// Global function, rows is a card-column mapping (2-dimensional array), so we need to convert rows 
+// to a 1-dimensional array to store it in localStorage
 function rowsToList(rows) {
   // console.log(rows)
   let tempArr = []
@@ -254,7 +258,8 @@ function rowsToList(rows) {
   return tempArr
 }
 
-// click event
+// click event of the card(including sumbitting the form, displaying the user 
+// input data on the card and enable users to modify and delete the card )
 noWrap.addEventListener("click", function (ev) {
   ev = ev || event
   var target = ev.target || ev.srcElement
@@ -273,22 +278,21 @@ noWrap.addEventListener("click", function (ev) {
         break
       }
     }
-
     targetInfo.remove()
   } else if (target.className === "iconfont tick") {
-    // 卡片输入数据确定，生成卡片
+    // generate the card once the user click on the tick sign in the bottom of the input form
     console.log(target)
     let concealCard = targetInfo.parentNode.children[1]
     console.log(concealCard)
     console.log("-----", targetInfo.querySelector(".index_num"))
 
-    // todo: 得到卡片所在组的cardId
+    // Get the card Id in its group
     console.log("cardId", targetInfo.parentNode.parentNode.querySelector(".card_num").innerHTML)
     // return
     let rowNum = Number(targetInfo.parentNode.parentNode.querySelector(".card_num").innerHTML)
 
-    // 保证卡片唯一
-    let isNewFlag = true // 卡片数据是否已经存在
+    // Guaranteed card uniqueness
+    let isNewFlag = true // check the card data whether already exist
     taskList.forEach((item) => {
       // console.log(item.id, targetInfo.querySelector(".index_num").innerHTML)
       if (Number(item.id) === Number(targetInfo.querySelector(".index_num").innerHTML)) {
@@ -300,7 +304,8 @@ noWrap.addEventListener("click", function (ev) {
       // localStorage.setItem("card", rowNum)
     }
     console.log(isNewFlag)
-    // ------end
+
+    // get the data from the input form
     let taskName = targetInfo.querySelector("#Task")
     let dueDate = targetInfo.querySelector("#Date")
     let estimateHour = targetInfo.querySelector("#Hour")
@@ -314,7 +319,7 @@ noWrap.addEventListener("click", function (ev) {
       let year = due[0]
       let month = due[1]
       let day = due[2]
-      // 新卡片时添加数据至localStorage
+      // Determine if it is a new card, if so, add the new data to localStorage, otherwise modify the corresponding data directly
       if (isNewFlag) {
         addTask(
           Number(targetInfo.querySelector(".index_num").innerHTML),
@@ -329,7 +334,7 @@ noWrap.addEventListener("click", function (ev) {
           rowNum
         )
       } else {
-        // 老数据的localStorage更新
+        // Modify the old data in the localStorage directly and update
         modifyTask(
           Number(targetInfo.querySelector(".index_num").innerHTML),
           taskName.value,
@@ -345,7 +350,7 @@ noWrap.addEventListener("click", function (ev) {
       }
 
       console.log(taskList)
-      // 找到编辑对应的储存数据
+      // Once the card data is found from local storage, the card is rendered
       console.log("------", target.parentNode.parentNode.querySelector(".index_num").innerHTML)
       let taskData = taskList.find((item) => {
         return Number(item.id) === Number(target.parentNode.parentNode.querySelector(".index_num").innerHTML)
@@ -370,19 +375,17 @@ noWrap.addEventListener("click", function (ev) {
         case "Low":
           concealCard.querySelector(".priority_Circle").style.backgroundColor = "#A3EA6B"
       }
-      target.parentNode.parentNode.style.display = "none" // 表单隐藏
-      concealCard.style.display = "block" // 卡片显示
-      // target.parentNode.parentNode.parentNode.children[2].style.display = "block" // 卡片添加显示
+      target.parentNode.parentNode.style.display = "none" // Conceal the form
+      concealCard.style.display = "block" // display the card
       let temp2 = target.parentNode.parentNode.parentNode.parentNode
       console.log(temp2.children[temp2.children.length - 1])
-      // temp2.children[temp2.children.length - 1].children[2].style.display = "block" // 卡片添加显示2
       if (isNewFlag) {
         let temp3 = addCard.cloneNode(true)
         temp2.children[temp2.children.length - 1].parentNode.appendChild(temp3)
       }
     }
   } else if (target.className === "plus") {
-    // 添加新的卡片
+    // Add a new card after clicking the "+ Add Task" button
     console.log(target)
     var cloneCardDiv = singleEle.cloneNode(true)
     target.closest("#dragZone").appendChild(cloneCardDiv)
@@ -396,14 +399,13 @@ noWrap.addEventListener("click", function (ev) {
     newestCard.style.display = "none"
     doubleClick(cloneCardDiv.querySelector(".conceal_Card"))
   } else if (target.id === "task_Edit") {
-    // 卡片编辑
+    // edit the card
     console.log(target.parentNode.parentNode.parentNode)
-    // return
     target.parentNode.parentNode.parentNode.parentNode.style.display = "none"
     target.parentNode.parentNode.parentNode.parentNode.parentNode.children[2].style.display = "none"
     target.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].style.display = "flex"
   } else if (target.id === "task_Delete") {
-    // 卡片删除
+    // delete the card(using the for loop to find the matched card)
     console.log("------", target.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].querySelector(".index_num").innerHTML)
     let delId = target.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].querySelector(".index_num").innerHTML
     for (let k = 0; k < taskList.length; k++) {
@@ -430,7 +432,7 @@ noWrap.addEventListener("click", function (ev) {
 
     target.closest(".card_Individual_Elements").remove()
   } else if (target.id === "ellipse") {
-    // 卡片编辑菜单？
+    // Card editing menu
     let tempTarget = target.parentNode.parentNode.querySelector(".drop_Down")
     let flag = tempTarget.style.display
     console.log(flag)
@@ -444,7 +446,7 @@ noWrap.addEventListener("click", function (ev) {
   }
 })
 
-// 全局点击后隐藏卡片edit/delete操作
+// Hide card edit/delete operations by global clicking
 document.addEventListener("click", function (ev) {
   ev = ev || event
   var target = ev.target || ev.srcElement
@@ -458,18 +460,19 @@ document.addEventListener("click", function (ev) {
   }
 })
 
-/*****
- * 卡片的双击事件
- * 为卡片双击时能讲参数传给task页面做准备
+/*
+ * Double-click events for cards
+ * Pass parameters to the task page when the card is double-clicked
  * begin
- * */
-// 双击卡片事件
+ */
+
+// Double click card event
 console.log(document.querySelectorAll(".conceal_Card"))
 document.querySelectorAll(".conceal_Card").forEach((item) => {
   doubleClick(item)
 })
 
-// 初始化双击事件
+// assign the double click event to each card after the page loaded
 function doubleClick(item) {
   item.addEventListener("dblclick", function (e) {
     // let ev = e || event
@@ -481,12 +484,12 @@ function doubleClick(item) {
   })
 }
 
-/****
- * 卡片双击事件
+/*
+ * Card double click event
  * end
- * */
+ */
 
-// 卡片标题事件，将每一列的标题存储至localStorage中 => rowTitle函数
+// event of the card title, storing the title of each column in localStorage => rowTitle function
 document.querySelectorAll(".card_Column_Name").forEach((item) => {
   rowTitle(item.querySelector("h3"))
 })
@@ -504,16 +507,17 @@ function rowTitle(item) {
   })
 }
 
-// 添加新的一列，其中包括了一些初始化操作，需要为其添加拖拽/双击等事件
+// Add a new column with some initialization actions for adding events such as drag/double click etc
 newBoard.addEventListener("click", function (event) {
   var newColumn = cardColumnCopy.cloneNode(true)
-  // 添加一列时，需要将其中的卡片num(对应id)进行更改 => +1
+  // When adding a column, plus one to both card index and column index
   cardIndex++
   newColumn.querySelector(".index_num").innerHTML = cardIndex
   rowIndex++
   console.log(rowIndex)
   newColumn.querySelector(".card_num").innerHTML = rowIndex
 
+  // drag event and double click event initialize
   doubleClick(newColumn.querySelector(".conceal_Card"))
   rowTitle(newColumn.querySelector("h3"))
   newColumn.addEventListener("dragover", dragOver)
@@ -535,13 +539,12 @@ newBoard.addEventListener("click", function (event) {
   noWrap.insertBefore(newColumn, newBoard)
 })
 
-/****
- * 拖拽
- * 这里面重点便是dragDrop和dragEnter两个事件的处理
- * dragStart事件可以获取到拖拽对象，供后面操作
- * dragEnter事件表示拖拽过程中的一些卡片效果，例如展示拖拽预览之类的处理，包括一些数据的移动逻辑实现
- * dragDrop事件触发时表示拖拽已完成，可以将拖拽之后的数据进行处理后将其存储至localStorage
- * 结合其他拖拽事件便可实现卡片的拖拽功能，其中包括一些细节方面的处理，就不一一展开讲解了
+/*
+ * Dragging and dropping function
+ * The focus here is on handling the dragDrop and dragEnter events
+ * the dragStart event gets the drag object for later operation
+ * The dragEnter event indicates some card effects during the dragging process, such as showing the drag preview and other processing, including some data movement logic implementation.
+ * dragDrop event means that the dragging is done, and the data after the dragging can be processed and stored to localStorage.
  * begin
  */
 
@@ -599,7 +602,7 @@ function dragDrop() {
     }
     return newTask
   }
-  // 根据移动后的数据更新localStorage数据
+  // Update localStorage data based on the moved data
   function updateDatas(targetNode) {
     let temp = []
     let num = Number(targetNode.querySelector(".card_num").innerHTML)
@@ -629,7 +632,7 @@ function dragDrop() {
         let year = due[0]
         let month = due[1]
         let day = due[2]
-        // 新卡片时添加数据至localStorage
+        // Updating data to localStorage for dragged cards(remove the card from the drastart column and add it to the drag tartget column)
         let tempTask = getTask(
           Number(item.querySelector(".index_num").innerHTML),
           taskName.value,

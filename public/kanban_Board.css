@@ -23,7 +23,9 @@ h3 {
 
 /* set the width of each column and gap between columns */
 .card_Column {
+  flex-shrink: 0;
   width: 310px;
+  /* min-width: 310px !important; */
   display: inline-block;
   margin-right: 100px;
   margin-bottom: 50px;
@@ -80,7 +82,7 @@ h3 {
 }
 /* deeper color when hovering on the card */
 .card_Information:hover{
-  background-color: rgb(85, 177, 222)
+  background-color: rgb(79, 170, 215);
 }
 /* drop down menu when user click on ellipse */
 .drop_Down {
