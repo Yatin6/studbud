@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kanban Borard</title>
+  <meta name = "keywords" content = "study conqueror, kanban borard"/>
+  <link rel="shortcut Icon" href="./Images/logo_purple.png">
   <link rel="stylesheet" href="header.css" />
   <link rel="stylesheet" href="kanban_Board.css" />
   <link rel="stylesheet" href="./iconfont/iconfont.css" />
@@ -20,7 +22,7 @@
         <div class="bar_Content fixed_Width">
           <!-- logo and website name on the left -->
           <div class="bar_Left">
-            <a href="index.html"><img id="logo" src="./Images/logo.png" /></a>
+            <a href="index.html"><img id="logo" src="./Images/logo.png" alt="logo"/></a>
             <div class="brand">
               <a href="index.html">Study</a>
               <a href="index.html">Conqueror</a>
@@ -69,7 +71,7 @@
       <div class="card_Column copy" id="dragZone">
         <!-- column name and the "cross" icon -->
         <div class="card_Column_Name">
-          <h3 contenteditable="true" style="-webkit-user-select: auto">Name new column</h3>
+          <h3 contenteditable="true" style="-webkit-user-select: auto; user-select: auto;">Name new column</h3>
           <i class="iconfont del">&#xeb6a;</i>
           <!-- assign the number to each column name as an index to retrieve later when doing local storage  -->
           <div class="card_num" style="display: none">card num test</div>

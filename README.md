@@ -4,7 +4,7 @@
 
    *Before:*
 
-   ![image-20220604124134259](.\README.assets\image-20220604124134259.png)
+   ![image-20220604124134259](image-20220604124134259.png)
 
    **Feedback:** When two of my testing participants viewed the old version of the music player, they expressed confusion about how long the current song had been playing and how much time remained. On the other hand, two participants mentioned that it it looks a little bit disharmonious on the bar.
 
@@ -12,7 +12,7 @@
 
    *After:*
 
-   ![image-20220604124313914](.\README.assets\image-20220604124313914.png)
+   ![image-20220604124313914](image-20220604124313914.png)
 
    
 
@@ -22,7 +22,7 @@
 
    *Before:* 
 
-   ![image-20220604104511399](.\README.assets\image-20220604104511399.png)
+   ![image-20220604104511399](image-20220604104511399.png)
 
    **Feedback:** According to user testing feedback, 3/6 participants thought this interaction mode was strange because the card almost stayed unchanged before and after they finished filling out the information and saved it.
 
@@ -34,21 +34,21 @@
 
    ​First step: fill in the input form
 
-   ![image-20220604122623048](.\README.assets\image-20220604122623048.png)
+   ![image-20220604122623048](image-20220604122623048.png)
 
    ​Second step: display the information on a card and user can edit or delete the card by clicking the ellipse on the right
 
-   ![image-20220604104930333](.\README.assets\image-20220604104930333.png)
+   ![image-20220604104930333](image-20220604104930333.png)
 
    ​The task information will still be there when the user edits the card.
 
-   ![image-20220604123459433](.\README.assets\image-20220604123459433.png)
+   ![image-20220604123459433](image-20220604123459433.png)
 
 3. ### **Enter the corresponding task page by double clicking on the card**
 
    *Before:*
 
-   ![image-20220604135149523](.\README.assets\image-20220604135149523.png)
+   ![image-20220604135149523](image-20220604135149523.png)
 
    **Feedback:** The majority of my participants were unaware that they may access a specific page by simply twice clicking on the card, . Because there are no hints directing them to do so.
 
@@ -56,7 +56,7 @@
 
    *After:*
 
-   ![image-20220604134922404](.\README.assets\image-20220604134922404.png)
+   ![image-20220604134922404](image-20220604134922404.png)
 
    
 
@@ -64,7 +64,7 @@
 
    *Before:*
 
-   <img src=".\README.assets\image-20220604104138483.png" alt="image-20220604104138483" style="zoom:;" />
+   <img src="image-20220604104138483.png" alt="image-20220604104138483" style="zoom:;" />
 
    **Feedback:** Three respondents claimed the subtask name was less noticeable. Additionally, they didn't want to know how many steps they'd taken when doing the certain task. Because as the number of steps increases, they will perceive the work to be extremely complicated and will want to end it as soon as possible.
 
@@ -72,13 +72,13 @@
 
    *After:*
 
-   <img src=".\README.assets\image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 50%;" />
+   <img src="image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 50%;" />
 
 5. ### **The timer:**
 
    *Before:*
 
-   <img src=".\README.assets\image-20220604151058630.png" alt="image-20220604151058630" style="zoom: 67%;" />
+   <img src="image-20220604151058630.png" alt="image-20220604151058630" style="zoom: 67%;" />
 
    **Feedback:** Five participants stated that they will not use the restart button while studying.
 
@@ -86,14 +86,14 @@
 
    After: 
 
-   <img src=".\README.assets\image-20220604151118479.png" alt="image-20220604151118479" style="zoom: 67%;" />
+   <img src="image-20220604151118479.png" alt="image-20220604151118479" style="zoom: 67%;" />
 
 
 6. ### **Reading list ellipse**
 
 ​*Before:*
 
-<img src=".\README.assets\image-20220604104110701.png" alt="image-20220604104110701" style="zoom:150%;"/>
+<img src="image-20220604104110701.png" alt="image-20220604104110701" style="zoom:150%;"/>
 
 ​**Feedback:** The ellipse in the next line will be hindered by the pop-up menu.
 
@@ -101,14 +101,14 @@
 
 *After:* 
 
-![image-20220604190556234](README.assets/image-20220604190556234.png)
+![image-20220604190556234](image-20220604190556234.png)
 
 
 7. ### **Reading list input form**
 
    *Before:*
 
-   <img src=".\README.assets\image-20220604104036525.png" alt="image-20220604104036525"  />
+   <img src="image-20220604104036525.png" alt="image-20220604104036525"  />
 
    
 
@@ -120,7 +120,7 @@
 
    *After:* 
 
-   <img src=".\README.assets\image-20220604151858986.png" alt="image-20220604151858986" style="zoom: 50%;" />
+   <img src="image-20220604151858986.png" alt="image-20220604151858986" style="zoom: 50%;" />
 
    
 
@@ -128,22 +128,22 @@
 
    1. Because these icons on the card are unclickable, the mouse will not change to the pointer when the user hovers over them.
 
-      <img src="README.assets/image-20220605003235364.png" alt="image-20220605003235364" style="zoom:150%;" />
+      <img src="image-20220605003235364.png" alt="image-20220605003235364" style="zoom:150%;" />
 
    2. Many users clicked the "Complete" button first when they looked at the task page, and got no response. So I created an alert popup to inform users that they should first add steps.
 
-      <img src="README.assets/image-20220605003152976.png" alt="image-20220605003152976" style="zoom: 67%;" />
+      <img src="image-20220605003152976.png" alt="image-20220605003152976" style="zoom: 67%;" />
 
    3. Similarly, when a promodoro session ends, another alert box will notify the user.
 
-      <img src="README.assets/image-20220605003605579.png" alt="image-20220605003605579" style="zoom: 67%;" />
+      <img src="image-20220605003605579.png" alt="image-20220605003605579" style="zoom: 67%;" />
 
    4. Added a dash before the note as a reference point for each line.
 
       *Before:*
 
-      ![image-20220605145526701](README.assets/image-20220605145526701.png)
+      ![image-20220605145526701](image-20220605145526701.png)
 
       *After:* 
 
-      ![image-20220605145420644](README.assets/image-20220605145420644.png)
+      ![image-20220605145420644](image-20220605145420644.png)
