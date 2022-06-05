@@ -475,6 +475,7 @@ initReferenceList()
  * begin
  */
 
+// reference generation function
 addLinkWrap.querySelector('#reference').addEventListener("click", function (e) {
   e.preventDefault()
   if (form.querySelector("#note").value.trim() === "" || form.querySelector("#URL").value.trim() === "") {
@@ -491,8 +492,7 @@ addLinkWrap.querySelector('#reference').addEventListener("click", function (e) {
     year: form.querySelector("#year").value.trim(),
     web: form.querySelector("#webname").value.trim(),
   }
-  console.log(obj)
-  // alert(obj)
+  alert(obj.author.lname+","+" "+obj.author.iname.charAt(0).toUpperCase()+". "+"("+obj.year+"). "+ obj.title+". "+obj.web+". "+ obj.url)
 })
 
 // Add a new link to the task page after the user presses the save button and save it to the local storage
