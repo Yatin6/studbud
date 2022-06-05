@@ -4,7 +4,7 @@
 100C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\node_modules\caniuse-lite\data\features\xhtml.js132938571476500060 0
 107C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\node_modules\@babel\helper-validator-identifier\LICENSE132938571460192221 0
 94C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\node_modules\css-select\lib\index.d.ts.map132938571464664684 0
-64C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\package.json132988992755192330 0
+64C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\package.json132988999647664516 0
 96C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\node_modules\caniuse-lite\data\regions\SR.js132938571475029569 0
 78C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\node_modules\acorn\LICENSE132938571460792427 0
 79C:\Users\Yatin\Desktop\DECO2017_A3_yshe6581\studbud\image-20220604122614496.png132987903745003146 0
