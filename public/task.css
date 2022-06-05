@@ -269,6 +269,7 @@
 .task_wrap .set i {
   font-size: 60px;
   margin: 0 40px;
+  
 }
 
 /* the reference list section */
@@ -315,7 +316,7 @@
   font-weight: bold;
 }
 
-/* format the display of the link name after the user adding one */
+/* format the display of the "note" on the task page after the user adding the link */
 .task_wrap .link {
   padding: 17px 10px;
   border-bottom: 1.5px solid #c1c8e4;
@@ -324,6 +325,12 @@
 .task_wrap .link a {
   margin-left: 30px;
   color: #5ab9ea;
+}
+
+/* the "-" before the note */
+.task_wrap .link a::before {
+  content: "- ";
+  font-weight: bold;
 }
 
 /* the edit ellipse */

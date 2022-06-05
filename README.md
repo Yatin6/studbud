@@ -32,15 +32,15 @@
 
    *After:*
 
-   ​                                                                                                      First step: fill in the input form
+   ​First step: fill in the input form
 
    ![image-20220604122623048](.\README.assets\image-20220604122623048.png)
 
-   ​						 Second step: display the information on a card and user can edit or delete the card by clicking the ellipse on the right
+   ​Second step: display the information on a card and user can edit or delete the card by clicking the ellipse on the right
 
    ![image-20220604104930333](.\README.assets\image-20220604104930333.png)
 
-   ​                                                                    The task information will still be there when the user edits the card.
+   ​The task information will still be there when the user edits the card.
 
    ![image-20220604123459433](.\README.assets\image-20220604123459433.png)
 
@@ -64,15 +64,15 @@
 
    *Before:*
 
-<img src=".\README.assets\image-20220604104138483.png" alt="image-20220604104138483" style="zoom:;" />
+   <img src=".\README.assets\image-20220604104138483.png" alt="image-20220604104138483" style="zoom:;" />
 
-**Feedback:** Three respondents claimed the subtask name was less noticeable. Additionally, they didn't want to know how many steps they'd taken when doing the certain task. Because as the number of steps increases, they will perceive the work to be extremely complicated and will want to end it as soon as possible.
+   **Feedback:** Three respondents claimed the subtask name was less noticeable. Additionally, they didn't want to know how many steps they'd taken when doing the certain task. Because as the number of steps increases, they will perceive the work to be extremely complicated and will want to end it as soon as possible.
 
-**Self-reflection:** The step number will no longer be shown. And I believe the user feels the subtask name is not apparent because of the light font-weight, and the "Complete" button is too large. Except modifying them, a horizontal line has been placed below the "current step" to assist the user in distinguishing the part.
+   **Self-reflection:** The step number will no longer be shown. And I believe the user feels the subtask name is not apparent because of the light font-weight, and the "Complete" button is too large. Except modifying them, a horizontal line has been placed below the "current step" to assist the user in distinguishing the part.
 
-​       *After:*
+   *After:*
 
-<img src=".\README.assets\image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 50%;" />
+   <img src=".\README.assets\image-20220604142951802.png" alt="image-20220604142951802" style="zoom: 50%;" />
 
 5. ### **The timer:**
 
@@ -84,28 +84,24 @@
 
    **Self-reflection:**  Their words make sense to me. On the other side, there is no means for the user to skip to the next pomodoro session if they want. As a result, I've replaced the restart button with the skip button.
 
-   
-
    After: 
 
    <img src=".\README.assets\image-20220604151118479.png" alt="image-20220604151118479" style="zoom: 67%;" />
 
 
-
 6. ### **Reading list ellipse**
 
-​	*Before:*
+​*Before:*
 
-<img src=".\README.assets\image-20220604104110701.png" alt="image-20220604104110701" style="zoom:150%;" />
+<img src=".\README.assets\image-20220604104110701.png" alt="image-20220604104110701" style="zoom:150%;"/>
 
-​	**Feedback:** The ellipse in the next line will be hindered by the pop-up menu.
+​**Feedback:** The ellipse in the next line will be hindered by the pop-up menu.
 
-​	**Self-reflection:** To address this problem, I relocate the pop-up menu to the right of the ellipse.
+​**Self-reflection:** To address this problem, I relocate the pop-up menu to the right of the ellipse.
 
-​    After:* 
+*After:* 
 
 ![image-20220604190556234](README.assets/image-20220604190556234.png)
-
 
 
 7. ### **Reading list input form**
@@ -128,16 +124,26 @@
 
    
 
-8. ### **The rest of things are improving the user experience.**
+8. ### **User experience improvements**
 
    1. Because these icons on the card are unclickable, the mouse will not change to the pointer when the user hovers over them.
 
-      ![image-20220605003235364](README.assets/image-20220605003235364.png)
+      <img src="README.assets/image-20220605003235364.png" alt="image-20220605003235364" style="zoom:150%;" />
 
    2. Many users clicked the "Complete" button first when they looked at the task page, and got no response. So I created an alert popup to inform users that they should first add steps.
 
-<img src="README.assets/image-20220605003152976.png" alt="image-20220605003152976" style="zoom: 67%;" />
+      <img src="README.assets/image-20220605003152976.png" alt="image-20220605003152976" style="zoom: 67%;" />
 
-3. Similarly, when a promodoro session ends, another alert box will notify the user.
+   3. Similarly, when a promodoro session ends, another alert box will notify the user.
 
-<img src="README.assets/image-20220605003605579.png" alt="image-20220605003605579" style="zoom: 67%;" />
+      <img src="README.assets/image-20220605003605579.png" alt="image-20220605003605579" style="zoom: 67%;" />
+
+   4. Added a dash before the note as a reference point for each line.
+
+      *Before:*
+
+      ![image-20220605145526701](README.assets/image-20220605145526701.png)
+
+      *After:* 
+
+      ![image-20220605145420644](README.assets/image-20220605145420644.png)
