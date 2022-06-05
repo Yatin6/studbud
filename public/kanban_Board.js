@@ -82,7 +82,6 @@ function modifyTask(id, name, year, month, day, hours, minutes, priority, status
   }
   for (let j = 0; j < taskList.length; j++) {
     if (Number(taskList[j].id) === Number(id)) {
-      // console.log("is????")
       newTask.datas = taskList[j].datas
       taskList[j] = newTask
       break
@@ -191,7 +190,6 @@ function initCards(taskDatas, rowIndex) {
   newColumn.appendChild(newAddCard)
 }
 
-// initCards()
 
 // Converts the one-dimensional array taskList in local storage into a two-dimensional array
 // rows for easy handling of data in each column。Then, initialize each column of data: the initialization 
@@ -227,7 +225,6 @@ function initRow() {
     if (rowTemp.indexOf(Number(item.rowNum)) !== -1) {
       // console.log(rowTemp.indexOf(Number(item.rowNum)))
       titleTemp.push(item)
-      // console.log("????", titleTemp)
     }
   })
   console.log(titleTemp)
@@ -250,7 +247,6 @@ function rowsToList(rows) {
   // console.log(rows)
   let tempArr = []
   rows.forEach((item) => {
-    // tempArr.push(item.data)
     item.data.forEach((item2) => {
       tempArr.push(item2)
     })
@@ -477,7 +473,6 @@ function doubleClick(item) {
   item.addEventListener("dblclick", function (e) {
     // let ev = e || event
     // let target = ev.target || ev.srcElement
-    // console.log(target)
     console.log(item.parentNode.querySelector(".index_num").innerHTML)
     const id = item.parentNode.querySelector(".index_num").innerHTML
     location.replace(`task.html?id=${id}`)
